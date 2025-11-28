@@ -16,15 +16,32 @@
 <script>
 	import { gsap } from "@lib/gsap"
 	
-	const slides = document.querySelectorAll(".slide");
+	const slides = document.querySelectorAll('.slide:not([data-initialized])');
 
 	slides.forEach((slide) => {   
-        const wrapperAnimation = slide.querySelectorAll('.wrapper-animation');
-        const wrapperFix = slide.querySelectorAll('.wrapper-fix')
+        const animation = slide.querySelectorAll('.wrapper-animation');
+        const fix = slide.querySelectorAll('.wrapper-fix')
 
-        gsap.to(wrapperFix, {
-            scrollTrigger: wrapperFix
+        gsap.fromTo(animation, {
+            y: '25vh',
+            opacity: 0,
+        },{
+            y: 0,
+            opacity: 1,
+            duration: 2,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: slide,
+                toggleActions: 'play none none reset',
+                start: 'top bottom',
+                scrub: true,
+            }
         })
+        
+        slide.setAttribute('data-initialized', 'true')
+        // gsap.to(fix, {
+        //     scrollTrigger: fix
+        // })
 		// gsap.fromTo(wrapperAnimation, {
         //     y: "10vh"
         // },{

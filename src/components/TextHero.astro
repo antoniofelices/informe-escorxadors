@@ -1,8 +1,6 @@
 ---
-const uniqueId = `hero-${Math.random().toString(11).substr(2, 5)}`
 ---
-
-<div class="hero-section min-h-dvh flex items-center justify-center" data-hero-id={uniqueId}>
+<div class="hero-section min-h-dvh flex items-center justify-center">
     <div class="text-center py-18 max-w-5xl m-auto">
         <div class="m-a-from-bottom-1">
             <slot name="content1">

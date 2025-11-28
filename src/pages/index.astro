@@ -10,6 +10,16 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 
 <Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={false} >
 
+	<TextHero>
+		<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center" slot="content1">
+			Història dels Escorxadors
+		</h1>
+		<p class="text-center mb-12 max-w-2xl mx-auto" slot="content2">
+			Breu història d’una infraestructura clau: els escorxadors municipals
+		</p>
+	</TextHero>
+	
+
 	<ScreenSplitTwo>
 		<div slot="content1">
 			<Image src={image1920x1080} alt="" />
@@ -28,15 +38,6 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 			</div>
 		</div>
 	</ScreenSplitTwo>
-
-	<TextHero>
-		<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center" slot="content1">
-			Història dels Escorxadors
-		</h1>
-		<p class="text-center mb-12 max-w-2xl mx-auto" slot="content2">
-			Breu història d’una infraestructura clau: els escorxadors municipals
-		</p>
-	</TextHero>
 	
 	<TimelineGsap periods={dataTimelineCa} />
 
