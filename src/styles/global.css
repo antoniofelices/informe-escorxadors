@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-*: initial;
+    --color-transparent: transparent;
+    --color-current: currentColor;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Orange */
+    --color-orange-50: #fff5f2;
+    --color-orange-100: #ffe8e0;
+    --color-orange-200: #ffd0c4;
+    --color-orange-300: #ffad99;
+    --color-orange-400: #ff7c5e;
+    --color-orange-500: #ff5424;
+    --color-orange-600: #f03a0a;
+    --color-orange-700: #c72e08;
+    --color-orange-800: #a02710;
+    --color-orange-900: #842411;
+    --color-orange-950: #481006;
+
+    /* Green */
+    --color-green-50: #f0fffe;
+    --color-green-100: #ccfffe;
+    --color-green-200: #99fffd;
+    --color-green-300: #5df9f9;
+    --color-green-400: #1de4e7;
+    --color-green-500: #006b67;
+    --color-green-600: #005653;
+    --color-green-700: #004542;
+    --color-green-800: #003735;
+    --color-green-900: #002e2c;
+    --color-green-950: #001a19;
+
+    /* Blue */
+    --color-blue-50: #eff6ff;
+    --color-blue-100: #dbeafe;
+    --color-blue-200: #bfdbfe;
+    --color-blue-300: #93bbfd;
+    --color-blue-400: #609bfc;
+    --color-blue-500: #427cfb;
+    --color-blue-600: #2563eb;
+    --color-blue-700: #1d4ed8;
+    --color-blue-800: #1e40af;
+    --color-blue-900: #1e3a8a;
+    --color-blue-950: #172554;
+
+    /* Yellow */
+    --color-yellow-50: #fffbea;
+    --color-yellow-100: #fff3c5;
+    --color-yellow-200: #ffe785;
+    --color-yellow-300: #ffd846;
+    --color-yellow-400: #fec900;
+    --color-yellow-500: #eab308;
+    --color-yellow-600: #ca8a04;
+    --color-yellow-700: #a16207;
+    --color-yellow-800: #854d0e;
+    --color-yellow-900: #713f12;
+    --color-yellow-950: #422006;
+
+    /* Red */
+    --color-red-50: #fff5f3;
+    --color-red-100: #ffe8e3;
+    --color-red-200: #ffd5cc;
+    --color-red-300: #ffb8a8;
+    --color-red-400: #ff8b70;
+    --color-red-500: #ff6344;
+    --color-red-600: #ed3f1d;
+    --color-red-700: #c83114;
+    --color-red-800: #a52c14;
+    --color-red-900: #892918;
+    --color-red-950: #4b1208;
+
+    /* Gray */
+    --color-gray-50: #f9f9f9;
+    --color-gray-100: #f0f0f0;
+    --color-gray-200: #e3e3e3;
+    --color-gray-300: #cacaca;
+    --color-gray-400: #a8a8a8;
+    --color-gray-500: #535353;
+    --color-gray-600: #434343;
+    --color-gray-700: #383838;
+    --color-gray-800: #2e2e2e;
+    --color-gray-900: #262626;
+    --color-gray-950: #171717;
+
+    --font-*: initial;
+    --font-sans: Helvetica, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --text-*: initial;
+    --text-xs: 0.79rem;
+    --text-sm: 0.889rem;
+    --text-base: 1rem;
+    --text-l: 1.125rem;
+    --text-xl: 1.266rem;
+    --text-2xl: 1.424rem;
+    --text-3xl: 1.602rem;
+    --text-4xl: 1.802rem;
+    --text-5xl: 2.027rem;
+    --text-6xl: 2.281rem;
+    --text-7xl: 2.565rem;
+    --text-8xl: 2.885rem;
+    --text-9xl: 3.247rem;
+    --text-10xl: 3.653rem;
+    --text-11xl: 4.11rem;
+    --text-12xl: 4.623rem;
+    --text-13xl: 5.202rem;
+    --text-14xl: 5.852rem;
+    --text-15xl: 6.583rem;
+    --text-16xl: 7.406rem;
+    --text-17xl: 8.332rem;
+    --text-18xl: 9.373rem;
+    --text-19xl: 10.545rem;
+    --text-20xl: 11.863rem;
+
+    --text-xs--line-height: 1.75;
+    --text-sm--line-height: 1.6;
+    --text-base--line-height: 1.45;
+    --text-l--line-height: 1.45;
+    --text-xl--line-height: 1.45;
+    --text-2xl--line-height: 1.3;
+    --text-3xl--line-height: 1.3;
+    --text-4xl--line-height: 1.3;
+    --text-5xl--line-height: 1.1;
+    --text-6xl--line-height: 1.1;
+    --text-7xl--line-height: 1.1;
+    --text-8xl--line-height: 1.1;
+    --text-9xl--line-height: 1.1;
+    --text-10xl--line-height: 1;
+    --text-11xl--line-height: 1;
+    --text-12xl--line-height: 1;
+    --text-13xl--line-height: 1;
+    --text-14xl--line-height: 1;
+    --text-15xl--line-height: 0.9;
+    --text-16xl--line-height: 0.9;
+    --text-17xl--line-height: 0.9;
+    --text-18xl--line-height: 0.9;
+    --text-19xl--line-height: 0.9;
+    --text-20xl--line-height: 0.9;
+
+    --spacing-112: 26rem;
+    --spacing-128: 28rem;
+    --spacing-144: 30rem;
+    --spacing-160: 32rem;
+
+    --m-list-marker: ' · ';
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+    body:has(button.navigation-open) {
+        overflow: hidden;
+    }
+    main a {
+        @apply border-b border-dotted;
+    }
+}

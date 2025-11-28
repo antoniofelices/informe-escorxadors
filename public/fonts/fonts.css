@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "usual";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(usual/usual-bold.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: "usual";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(usual/usual-medium.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: "usual";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(usual/usual-regular.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: "usual";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(usual/usual-light.woff2) format("woff2")
+}

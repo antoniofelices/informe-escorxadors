@@ -1,0 +1,19 @@
+{
+    "name": "informeescorxadors",
+    "type": "module",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^4.3.10",
+        "@tailwindcss/vite": "^4.1.17",
+        "astro": "^5.15.5",
+        "astro-icon": "^1.1.5",
+        "gsap": "^3.13.0",
+        "tailwindcss": "^4.1.17"
+    }
+}

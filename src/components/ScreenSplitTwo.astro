@@ -1,0 +1,51 @@
+---
+---
+<div class="slide m-bg-split-2">
+    <div class="px-4 md:px-18">
+        <div class="grid md:grid-cols-2 lg:gap-36 place-content-center min-h-dvh">
+            <div class="wrapper-animation">
+                <slot name="content1" />
+            </div>
+            <div class="wrapper-fix self-center">
+                <slot name="content2" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	import { gsap } from "@lib/gsap"
+	
+	const slides = document.querySelectorAll(".slide");
+
+	slides.forEach((slide) => {   
+        const wrapperAnimation = slide.querySelectorAll('.wrapper-animation');
+        const wrapperFix = slide.querySelectorAll('.wrapper-fix')
+
+        gsap.to(wrapperFix, {
+            scrollTrigger: wrapperFix
+        })
+		// gsap.fromTo(wrapperAnimation, {
+        //     y: "10vh"
+        // },{
+        //     y: "50vh",
+        //     scrollTrigger: {
+        //         trigger: '.wrapper-fix',
+        //         scrub: true,
+        //         start: "top bottom",
+                // snap: {
+                //     snapTo: 0.5,
+                //     duration: 1,
+                //     ease: 'power4.inOut'
+                // }
+        //     },
+        //     ease: 'none'
+        // })
+	});
+</script>
+
+<style>
+	.m-bg-split-2 {
+		background: linear-gradient(90deg, var(--color-yellow-500) 50%, transparent 50%);
+	}
+</style>
