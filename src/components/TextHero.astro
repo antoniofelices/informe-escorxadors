@@ -1,7 +1,8 @@
 ---
+const uniqueId = `hero-${Math.random().toString(11).substr(2, 5)}`
 ---
 
-<div class="hero-section min-h-dvh flex items-center justify-center">
+<div class="hero-section min-h-dvh flex items-center justify-center" data-hero-id={uniqueId}>
     <div class="text-center py-18 max-w-5xl m-auto">
         <div class="m-a-from-bottom-1">
             <slot name="content1">
@@ -15,9 +16,9 @@
 <script>
 	import { gsap, fadeIn } from "@lib/gsap";
 
-    const heroSections = document.querySelectorAll('.hero-section')
+    const sections = document.querySelectorAll('.hero-section:not([data-initialized])')
 
-    heroSections.forEach((section) => {
+    sections.forEach((section) => {
         const element1 = section.querySelector('.m-a-from-bottom-1')
         const element2 = section.querySelector('.m-a-from-bottom-2')
 
@@ -32,7 +33,7 @@
         tlHero
             .add(fadeIn(element1))
             .add(fadeIn(element2))
+
+        section.setAttribute('data-initialized', 'true')
     })
-
-
 </script>

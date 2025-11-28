@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function fadeIn(el: any) {
+function fadeIn(el: Element | string | null) {
     return gsap.from(el, {
         opacity: 0,
         y: 50,
@@ -12,13 +12,4 @@ function fadeIn(el: any) {
     })
 }
 
-function animateFromBottom(el: string) {
-    return gsap.from(el, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power2.out',
-    })
-}
-
-export { gsap, fadeIn, animateFromBottom, ScrollTrigger }
+export { gsap, fadeIn, ScrollTrigger }
