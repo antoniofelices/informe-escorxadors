@@ -1,0 +1,17 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import image1920x1080 from '@assets/images/1920x1080.jpg';
+import TextHero from '@components/TextHero.astro';
+import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
+---
+
+<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
+	<TextHero fullHeightCenter={false}>
+		<div class="py-20" slot="content1">
+			<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center">
+				Mapes
+			</h1>
+		</div>
+	</TextHero>
+</Layout>
