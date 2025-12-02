@@ -1,0 +1,18 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TimelineGsap from '@components/TimelineGsap.astro';
+import dataTimelineCa from '@data/ca/timeline'
+import TextHero from '@components/TextHero.astro';
+---
+
+<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={false} >
+	<TextHero fullHeightCenter={true}>
+		<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center" slot="content1">
+			Història dels Escorxadors
+		</h1>
+		<p class="text-center mb-12 max-w-2xl mx-auto" slot="content2">
+			Breu història d’una infraestructura clau: els escorxadors municipals
+		</p>
+	</TextHero>
+	<TimelineGsap periods={dataTimelineCa} />
+</Layout>

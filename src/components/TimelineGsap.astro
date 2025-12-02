@@ -5,7 +5,7 @@ const periods = Astro.props.periods;
 
 <div class="container mx-auto px-4 md:px-8">
     <div class="timeline">
-        <div class="timeline-line bg-linear-to-bl from-green-500 to-green-100"></div>
+        <div class="timeline-line bg-linear-to-bl from-green-500 to-green-400"></div>
 
         {periods.map((period: any) => {
             return (
@@ -128,7 +128,7 @@ const periods = Astro.props.periods;
 
     .timeline-line {
         position: absolute;
-        left: 48%;
+        left: 0;
         top: 0;
         width: 4px;
         height: 100%;

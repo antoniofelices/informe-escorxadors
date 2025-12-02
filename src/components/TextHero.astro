@@ -1,8 +1,15 @@
 ---
+interface Props {
+	fullHeightCenter?: boolean
+}
+
+const {
+	fullHeightCenter = false,
+} = Astro.props;
 ---
 
-<div class="hero-section min-h-dvh flex items-center justify-center">
-    <div class="text-center py-18 max-w-5xl m-auto">
+<div class={`hero-section ${fullHeightCenter ? 'min-h-dvh flex items-center justify-center' : ''}`}>
+    <div>
         <div class="m-a-from-bottom-1">
             <slot name="content1">
         </div>
