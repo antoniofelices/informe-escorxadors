@@ -8,7 +8,10 @@ const {
 } = Astro.props;
 ---
 
-<div class={`hero-section ${fullHeightCenter ? 'min-h-dvh flex items-center justify-center' : ''}`}>
+<div class:list={[
+    'hero-section flex items-center justify-center',
+    { 'min-h-dvh': fullHeightCenter }
+]}>
     <div>
         <div class="m-a-from-bottom-1">
             <slot name="content1">
