@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import image1920x1080 from '@assets/images/1920x1080.jpg';
+import TextHero from '@components/TextHero.astro';
+import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
+---
+
+<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
+
+	<ScreenSplitTwo>
+		<div slot="content1">
+			<Image src={image1920x1080} alt="" />
+			<ul class="mt-5">
+				<li><strong>Soja transgenica Brazil 52% EEUU 22%</strong>. Genera desforestació i vulneracions dels Drets Humans.</li>
+				<li>Cargill i Bunge processen la soja que entra pel Port de Barcelona.</li>
+				<li>Vall Companys i BonÀrea Fabriquen el pinso.</li>
+				<li>Mercabarna Comercialitza cada any 35.000 tones de carn.</li>
+				<li>Eix Transversal o eix dels porcs Connecta el Segrià i Osona amb el Port de Barcelona i Europa.</li>
+			</ul>
+		</div>
+		<div slot="content2">
+			<div class="image-wrap">
+				<h2 class="text-sm uppercase my-5">Infraestructures</h2>
+				<h2 class="text-10xl font-bold">Petita industria i infraestructures arrelades al territori.</h2>
+			</div>
+		</div>
+	</ScreenSplitTwo>
+
+	<TextHero fullHeightCenter={false}>
+		<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center" slot="content1">
+			Història dels Escorxadors
+		</h1>
+		<p class="text-center mb-12 max-w-2xl mx-auto" slot="content2">
+			Breu història d’una infraestructura clau: els escorxadors municipals
+		</p>
+	</TextHero>
+
+	<div class="m-bg-split-2">
+		<div class="min-h-dvh w-dvw slide">
+			<div class="container mx-auto px-4 md:px-8">
+				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
+					<div>
+						<Image src={image1920x1080} alt=""/>
+						<p class="text-5xl mt-5">Milers de porcs en un espai reduït i interior</p>
+						<p class="mt-5">Els animals són transportats centenars de quilòmetres fins a l'escorxador.</p>
+					</div>
+					<div>
+						<div class="image-wrap">
+							<h2 class="text-sm uppercase my-5">Benestar animal</h2>
+							<p class="text-6xl font-bold">Desenes o pocs centenars de porcs en un espai ampli amb possibilitat de sortir a l’exterior</p>
+							<p class="text-2xl mt-5">Els animals són transportats pocs quilòmetres fins a l'escorxador</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="min-h-dvh w-dvw slide">
+			<div class="container mx-auto px-4 md:px-8">
+				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
+					<div>
+						<Image src={image1920x1080} alt=""/>
+						<p class="text-5xl mt-5">1 any indústria catalana del porc = 55 anys totes les llars de Catalunya.</p>
+						<p class="mt-5">Genera estrès hídric.</p>
+					</div>
+					<div>
+						<div class="image-wrap">
+							<h2 class="text-sm uppercase my-5">Aigua</h2>
+							<p class="text-8xl font-bold">No genera cap estrès hídric.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+
+
+<style>
+	.m-rotate-90-deg {
+		transform: rotate(-90deg) translate(-50%, 0);
+	}
+</style>
