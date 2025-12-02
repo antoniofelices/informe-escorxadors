@@ -8,6 +8,17 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 
 <Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
 
+	<TextHero fullHeightCenter={true}>
+		<div slot="content1" class="container text-center mx-auto p-4 md:px-8">
+			<h1 class="text-4xl lg:text-10xl font-bold mb-8">
+				Implicacions econòmiques i ecològiques de dos models oposats
+			</h1>
+			<p class="mb-12 max-w-2xl mx-auto">
+				Una infografia basada en el cas de la finca ecològica Llavora i de l'Escorxador públic-comunitari de l'Armentera.
+			</p>
+		</div>
+	</TextHero>
+
 	<ScreenSplitTwo>
 		<div slot="content1">
 			<Image src={image1920x1080} alt="" />
@@ -27,14 +38,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 		</div>
 	</ScreenSplitTwo>
 
-	<TextHero fullHeightCenter={false}>
-		<h1 class="text-4xl lg:text-12xl font-bold mb-4 text-center" slot="content1">
-			Història dels Escorxadors
-		</h1>
-		<p class="text-center mb-12 max-w-2xl mx-auto" slot="content2">
-			Breu història d’una infraestructura clau: els escorxadors municipals
-		</p>
-	</TextHero>
+
 
 	<div class="m-bg-split-2">
 		<div class="min-h-dvh w-dvw slide">
