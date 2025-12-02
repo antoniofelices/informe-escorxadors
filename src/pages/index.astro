@@ -1,6 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import TextHero from '@components/TextHero.astro';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const translateString = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={false} >
@@ -9,9 +13,15 @@ import TextHero from '@components/TextHero.astro';
 			Informe Escorxadors
 		</h1>
 		<div slot="content2" class="grid lg:grid-cols-3">
-			<a href="" class="block">Cronologia</a>
-			<a href="" class="block">Comparativa</a>
-			<a href="" class="block">Mapes</a>
+			<a href={translatePath('/cronologia/')} class="block">
+				{translateString('navTimeline')}
+			</a>
+			<a href={translatePath('/comparativa/')} class="block">
+				{translateString('navComparative')}
+			</a>
+			<a href={translatePath('/mapes/')} class="block">
+				{translateString('navMaps')}
+			</a>
 		</div>
 	</TextHero>
 </Layout>

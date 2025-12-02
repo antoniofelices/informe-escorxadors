@@ -9,9 +9,13 @@ export const showDefaultLang = false
 
 export const routes = {
     ca: {
-        contacto: 'contacte',
+        timeline: 'cronologia',
+        comparative: 'comparativa',
+        maps: 'mapes',
     },
     es: {
-        contacto: 'contacto',
+        timeline: 'cronologia',
+        comparative: 'comparativa',
+        maps: 'mapas',
     },
 }
