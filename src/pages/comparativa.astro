@@ -4,28 +4,35 @@ import { Image } from 'astro:assets';
 import image1920x1080 from '@assets/images/1920x1080.jpg';
 import brasil from '@assets/images/infographic/brasil.svg';
 import eeuu from '@assets/images/infographic/eeuu.svg';
+import infrastructures from '@assets/images/infographic/infrastructures.svg';
+import industrialPigs from '@assets/images/infographic/industrial-pigs.svg';
+import ecologicPig from '@assets/images/infographic/ecologic-pig.svg';
+import water00 from '@assets/images/infographic/water00.svg';
+import water01 from '@assets/images/infographic/water01.svg';
+import slurry from '@assets/images/infographic/slurry.svg';
+import emissions from '@assets/images/infographic/emissions.svg';
 import TextHero from '@components/TextHero.astro';
 import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 ---
 
 <Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
-<div class="mt-40"> </div>
 
-	<ScreenSplitTwo title="Origen de l'alimentació">
-		<div slot="content1" class="md:mx-8">
-			<ul class="list-disc my-8">
-				<li><strong>Soja transgenica</strong>.<br>Genera <strong>desforestació</strong> i vulneracions dels Drets Humans.</li>
+	<p class="pt-20">l</p>
+
+	<ScreenSplitTwo title="Emissions">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Emissions d’efecte hivernacle</strong>.</li>
 			</ul>
-			<div class="flex lg:gap-8 justify-center">
-				<Image src={brasil} alt="" />
-				<Image src={eeuu} alt="" />
+			<div class="flex justify-start gap-4 mt-8">
+				<Image src={emissions} alt="" />
+				<p><strong>21%</strong><br>La indústria porcina catalana n’és responsable</p>
 			</div>
 		</div>
-		<div slot="content2" class="md:mx-8">
-			<ul class="list-disc my-8">
-				<li><strong>Cultius locals</strong>.<br>Hi ha un vincle directe entre ramaders i agricultors.</li>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Genera menys carboni i captura part del que genera</strong>.</li>
 			</ul>
-			<Image src={image1920x1080} alt="" />
 		</div>
 	</ScreenSplitTwo>
 
@@ -39,6 +46,141 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 			</p>
 		</div>
 	</TextHero>
+
+	<ScreenSplitTwo title="Origen de l'alimentació">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Soja transgenica</strong>.<br>Genera <strong>desforestació</strong> i vulneracions dels Drets Humans.</li>
+			</ul>
+			<div class="flex lg:gap-8 justify-center mt-8">
+				<Image src={brasil} alt="" />
+				<Image src={eeuu} alt="" />
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Cultius locals</strong>.<br>Hi ha un vincle directe entre ramaders i agricultors.</li>
+			</ul>
+			<Image src={image1920x1080} alt="" class="mt-8" />
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Infraestructures">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li class="mb-4"><strong>Bunge i Elian</strong>.<br>Processen la soja que entra pel Port de Barcelona.</li>
+				<li class="mb-4"><strong>Vall Companys i BonÀrea</strong>.<br>Fabriquen el pinso.</li>
+				<li class="mb-4"><strong>Mercabarna</strong>.<br>Comercialitza cada any <strong>35.000 tones de carn</strong>.</li>
+				<li class="mb-4"><strong>Eix transversal o eix dels porcs</strong>.<br>Connecta el Sagrià i Osona amb el Port de Barcelona i Europa.</li>
+			</ul>
+			<div class="">
+				<Image src={infrastructures} alt="" class="md:-mt-20" />
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Petita indústria i infraestructures arrelades al territori</strong><br>Molí de gra<br>Petites finques<br>Escorxador municipal</li>
+			</ul>
+			<Image src={image1920x1080} alt="" class="mt-8" />
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Porcs sacrificats">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li class="mb-4"><strong>Cada any a Catalunya</strong> es sacrifiquen.</li>
+			</ul>
+			<div>
+				<p class="text-8xl font-bold mb-4">23 millons</p>
+				<Image src={industrialPigs} alt="" class="mb-4" />
+			</div>
+			<div>
+				<p><strong>14 milions</strong><br>als escorxadors de Valls Companys, Grupo Batallé-Juia i Costa Brava.</p>
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li class="mb-4"><strong>A l’Escorxador de l’Armentera</strong></li>
+			</ul>
+			<div class="flex items-start gap-4">
+				<Image src={ecologicPig} alt="" class="" />
+				<div>
+					<p class="text-8xl font-bold mb-4 text-green-500">3.500</p>
+					<p>animals sacrificats cada any en una relació directa amb els ramaders locals.</p>
+				</div>
+			</div>
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Benestar animal">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Milers de porcs en un espai reduït i interior</strong><br>Els animals són transportats centenars de quilòmetres fins a l’escorxador.</li>
+			</ul>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Desenes o pocs centenars de porcs en un espai ampli amb possibilitat de sortir a l’exterior</strong>.<br>Els animals són transportats pocs quilòmetres fins a l’escorxador.</li>
+			</ul>
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Aigua">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Genera estrès hídric</strong><br>L’ús d’aigua és de....</li>
+			</ul>
+			<div class="flex justify-center gap-8 mt-8">
+				<div class="px-4 md:px-8">
+					<Image src={water00} alt="" />
+					<p class="mt-4 uppercase text-center text-xs">Indústria catalana del porc</p>
+				</div>
+				<div class="px-4 md:px-8">
+					<Image src={water01} alt="" />
+					<p class="mt-4 uppercase text-center text-xs">totes les llars de catalunya</p>
+				</div>
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Pateix estrès hídric</strong>.</li>
+			</ul>
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Purins">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Els purins de forma líquida contaminen la terra, l’aire i l’aigua</strong></li>
+			</ul>
+			<div class="flex justify-start gap-4 mt-8">
+				<Image src={slurry} alt="" />
+				<p><strong>40%</strong><br>del territori català <strong>està contaminat</strong> per un excés de nitrats</p>
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Els fems en jaç de palla reprodueixen la fertilitat del sòl</strong>.</li>
+			</ul>
+		</div>
+	</ScreenSplitTwo>
+
+	<ScreenSplitTwo title="Emissions">
+		<div slot="content1">
+			<ul class="list-disc">
+				<li><strong>Emissions d’efecte hivernacle</strong>.</li>
+			</ul>
+			<div class="flex justify-start gap-4 mt-8">
+				<Image src={emissions} alt="" />
+				<p><strong>21%</strong><br>La indústria porcina catalana n’és responsable</p>
+			</div>
+		</div>
+		<div slot="content2">
+			<ul class="list-disc">
+				<li><strong>Genera menys carboni i captura part del que genera</strong>.</li>
+			</ul>
+		</div>
+	</ScreenSplitTwo>
 
 </Layout>
 
