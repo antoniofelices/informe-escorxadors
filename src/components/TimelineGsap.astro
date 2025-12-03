@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
 const periods = Astro.props.periods;
 ---
 
@@ -14,9 +15,24 @@ const periods = Astro.props.periods;
                     <div class="timeline-content lg:col-span-2">
                         <p><span class="bg-green-600 text-xs text-white uppercase p-1">{period.time}</span></p>
                         <h2 class="font-bold mt-3 mb-3 lg:text-4xl">{period.title}</h2>
-                        <p class="model pb-3"><span class="uppercase text-xs">{period.description1}</span><br/>{period.text1}.</p>
-                        <p class="description pb-3"><span class="uppercase text-xs">{period.description2}</span><br/>{period.text2}.</p>
-                        <p class="example pb-3"><span class="uppercase text-xs">{period.description3}</span><br/>{period.text3}.</p>
+
+                        <div class="model pb-3">
+                            <h3 class="uppercase text-xs font-bold">
+                                {period.description1}
+                            </h3>
+                            <p class="mb-4">{period.text1}.</p>
+                            <p class="mb-4">{period.text2}.</p>
+                        </div>
+
+                        <div class="example pb-3">
+                            <h3 class="uppercase text-xs font-bold">
+                                {period.description3}
+                            </h3>
+                            <div class="flex gap-2">
+                                <Icon name="folder" class="text-xl text-green-500" />
+                                <p>{period.text3}.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
