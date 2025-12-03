@@ -2,27 +2,30 @@
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import image1920x1080 from '@assets/images/1920x1080.jpg';
+import brasil from '@assets/images/infographic/brasil.svg';
+import eeuu from '@assets/images/infographic/eeuu.svg';
 import TextHero from '@components/TextHero.astro';
 import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 ---
 
 <Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
+<div class="mt-40"> </div>
 
 	<ScreenSplitTwo title="Origen de l'alimentació">
-		<div slot="content1">
-			<Image src={image1920x1080} alt="" />
-			<ul class="mt-5">
-				<li><strong>Soja transgenica Brazil 52% EEUU 22%</strong>. Genera desforestació i vulneracions dels Drets Humans.</li>
-				<li>Cargill i Bunge processen la soja que entra pel Port de Barcelona.</li>
-				<li>Vall Companys i BonÀrea Fabriquen el pinso.</li>
-				<li>Mercabarna Comercialitza cada any 35.000 tones de carn.</li>
-				<li>Eix Transversal o eix dels porcs Connecta el Segrià i Osona amb el Port de Barcelona i Europa.</li>
+		<div slot="content1" class="md:mx-8">
+			<ul class="list-disc my-8">
+				<li><strong>Soja transgenica</strong>.<br>Genera <strong>desforestació</strong> i vulneracions dels Drets Humans.</li>
 			</ul>
-		</div>
-		<div slot="content2">
-			<div class="image-wrap">
-				<p>Petita industria i infraestructures arrelades al territori.</p>
+			<div class="flex lg:gap-8 justify-center">
+				<Image src={brasil} alt="" />
+				<Image src={eeuu} alt="" />
 			</div>
+		</div>
+		<div slot="content2" class="md:mx-8">
+			<ul class="list-disc my-8">
+				<li><strong>Cultius locals</strong>.<br>Hi ha un vincle directe entre ramaders i agricultors.</li>
+			</ul>
+			<Image src={image1920x1080} alt="" />
 		</div>
 	</ScreenSplitTwo>
 

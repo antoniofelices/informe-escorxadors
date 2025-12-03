@@ -7,16 +7,17 @@ const {
 	title = '',
 } = Astro.props;
 ---
-
 <div class="slide m-bg-split-2">
-    <div class="px-4 md:p-18">
-        <div class="grid md:grid-cols-2 lg:gap-36">
-            <div class="">
-                {title !=='' && <h2 class="text-center pb-2 mb-12 border-b border-current uppercase text-xs">{title}</h2>}
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div>
+            {title !=='' && <h2 class="text-center py-2 border-b border-current uppercase text-xs font-bold">{title}</h2>}
+            <div class="p-4 md:px-18">
                 <slot name="content1" />
             </div>
-            <div class="">
-                {title !=='' && <h2 class="text-center pb-2 mb-12 border-b border-current uppercase text-xs">{title}</h2>}
+        </div>
+        <div>
+            {title !=='' && <h2 class="text-center py-2 border-b border-current uppercase text-xs font-bold">{title}</h2>}
+            <div class="p-4 md:px-18">
                 <slot name="content2" />
             </div>
         </div>
@@ -24,7 +25,12 @@ const {
 </div>
 
 <style>
-	.m-bg-split-2 {
-		background: linear-gradient(90deg, var(--color-red-400) 50%, transparent 50%);
-	}
+    .m-bg-split-2 {
+        background: linear-gradient(180deg, var(--color-red-400) 50%, transparent 50%);
+    }   
+    @media (min-width: 768px) {
+     	.m-bg-split-2 {
+            background: linear-gradient(90deg, var(--color-red-400) 50%, transparent 50%);
+        }   
+    }
 </style>
