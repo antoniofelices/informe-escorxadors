@@ -1,143 +1,43 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import image1920x1080 from '@assets/images/1920x1080.jpg';
-import TimelineGsap from '@components/TimelineGsap.astro';
+import TextHero from '@components/TextHero.astro';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const translateString = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout title="informe mataderos municipales IDRA" includeFooter={false} includeHeader={false} >
-	<TimelineGsap />
-	<div class="m-bg-split-2">
-		<div class="min-h-dvh w-dvw slide">
-			<div class="container mx-auto px-4 md:px-8">
-				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
-					<div>
-						<Image src={image1920x1080} alt="" />
-						<ul class="mt-5">
-							<li><strong>Soja transgenica Brazil 52% EEUU 22%</strong>. Genera desforestació i vulneracions dels Drets Humans.</li>
-							<li>Cargill i Bunge processen la soja que entra pel Port de Barcelona.</li>
-							<li>Vall Companys i BonÀrea Fabriquen el pinso.</li>
-							<li>Mercabarna Comercialitza cada any 35.000 tones de carn.</li>
-							<li>Eix Transversal o eix dels porcs Connecta el Segrià i Osona amb el Port de Barcelona i Europa.</li>
-						</ul>
-					</div>
-					<div>
-						<div class="image-wrap">
-							<h2 class="text-sm uppercase my-5">Infraestructures</h2>
-							<h2 class="text-10xl font-bold">Petita industria i infraestructures arrelades al territori.</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="min-h-dvh w-dvw slide">
-			<!-- <div class="text-center my-32">
-				<h2 class="text-4xl uppercase">Porcs sacrificats</h2>
-				<p>Cada any a Catalunya.</p>
-			</div> -->
-			<div class="container mx-auto px-4 md:px-8">
-				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
-					<div>
-						<div>
-							<Image src={image1920x1080} alt="" />
-							<p class="text-5xl mt-5">23 milions</p>
-							<p class="mt-5">14 milions Escorxadors de Valls Companys, Grupo Batallé-Juia i Costa Brava.</p>
-						</div>
-					</div>
-					<div>
-						<div class="image-wrap">
-							<h2 class="text-sm uppercase my-5">Porcs sacrificats. Cada any a Catalunya.</h2>
-							<p class="text-10xl font-bold">3.500</p>
-							<p class="text-5xl font-bold">En relació directa amb els ramaders locals.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="min-h-dvh flex items-center justify-center">
-		<div class="text-center py-18 max-w-5xl m-auto">
-			<p class="text-6xl mt-5">L’Escorxador de l’Armentera</p>
-			<p class="text-8xl font-bold mt-5">Producció en un radi de 5 km i distribució en un màxim de 150 km.</p>
-		</div>
-	</div>
-	<div class="m-bg-split-2">
-		<div class="min-h-dvh w-dvw slide">
-			<!-- <div class="text-center my-32">
-				<h2 class="text-4xl uppercase">Benestar animal</h2>
-			</div> -->
-			<div class="container mx-auto px-4 md:px-8">
-				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
-					<div>
-						<Image src={image1920x1080} alt=""/>
-						<p class="text-5xl mt-5">Milers de porcs en un espai reduït i interior</p>
-						<p class="mt-5">Els animals són transportats centenars de quilòmetres fins a l'escorxador.</p>
-					</div>
-					<div>
-						<div class="image-wrap">
-							<h2 class="text-sm uppercase my-5">Benestar animal</h2>
-							<p class="text-6xl font-bold">Desenes o pocs centenars de porcs en un espai ampli amb possibilitat de sortir a l’exterior</p>
-							<p class="text-2xl mt-5">Els animals són transportats pocs quilòmetres fins a l'escorxador</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="min-h-dvh w-dvw slide">
-			<!-- <div class="text-center my-15">
-				<h2 class="text-4xl uppercase">Aigua</h2>
-			</div> -->
-			<div class="container mx-auto px-4 md:px-8">
-				<div class="grid lg:grid-cols-2 lg:gap-36 place-content-center">
-					<div>
-						<Image src={image1920x1080} alt=""/>
-						<p class="text-5xl mt-5">1 any indústria catalana del porc = 55 anys totes les llars de Catalunya.</p>
-						<p class="mt-5">Genera estrès hídric.</p>
-					</div>
-					<div>
-						<div class="image-wrap">
-							<h2 class="text-sm uppercase my-5">Aigua</h2>
-							<p class="text-8xl font-bold">No genera cap estrès hídric.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<Layout title="informe escorxadors IDRA" includeFooter={false} mainMenu={false}>
+  <TextHero fullHeightCenter={false}>
+    <div slot="content1" class="container mx-auto p-4 md:px-8 h-dvh">
+      <div class="h-1/2">
+        <h1 class="text-4xl lg:text-12xl font-bold mb-4">
+          ES Informe Escorxadors
+        </h1>
+        <p>
+          ES I will need all the texts in Spanish. By all, I mean all. Some text
+          explaining what can be found here… lorem ipsum
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-3">
+        <a href={translatePath('/cronologia/')} class="block">
+          <span>{translateString('navTimeline')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+        <a href={translatePath('/comparativa/')} class="block">
+          <span>{translateString('navComparative')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+        <a href={translatePath('/mapes/')} class="block">
+          <span>{translateString('navMaps')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+      </div>
+    </div>
+  </TextHero>
 </Layout>
-
-<script>
-	import { gsap } from "@lib/gsap"
-	
-	const slides = document.querySelectorAll(".slide");
-
-	slides.forEach((slide, i) => {   
-        const imageWrappers = slide.querySelectorAll('.image-wrap');
-
-		gsap.fromTo(imageWrappers, {
-            y: "10vh"
-        },{
-            y: "50vh",
-            scrollTrigger: {
-                trigger: slide,
-                scrub: true,
-                start: "top bottom",
-                snap: {
-                    snapTo: 0.5,
-                    duration: 1,
-                    ease: 'power4.inOut'
-                }
-            },
-            ease: 'none'
-        })
-	});
-</script>
-
-<style>
-	.m-bg-split-2 {
-		background: linear-gradient(90deg, var(--color-m-orange-300) 50%, transparent 50%);
-	}
-	.m-rotate-90-deg {
-		transform: rotate(-90deg) translate(-50%, 0);
-	}
-</style>

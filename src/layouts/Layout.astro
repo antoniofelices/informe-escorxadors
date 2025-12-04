@@ -7,105 +7,116 @@ import '@styles/fonts.css';
 import '@styles/global.css';
 
 interface Props {
-	title: string
-	description?: string
-	includeHeader?: boolean
-	includeFooter?: boolean
-	mainMenu?: boolean
+  title: string;
+  description?: string;
+  includeFooter?: boolean;
+  mainMenu?: boolean;
 }
 
 const {
-	title,
-	description,
-	includeHeader = true,
-	includeFooter = true,
-	mainMenu = true
+  title,
+  description,
+  includeFooter = true,
+  mainMenu = true,
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const translateString = useTranslations(lang);
 const { currentLocale } = Astro;
 const siteUrl = Astro.site;
-const currentURL = Astro.url.href
+const currentURL = Astro.url.href;
 ---
 
 <!doctype html>
 <html lang={currentLocale} class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="alternate" hreflang="ca-ES" href={siteUrl}>
-		<link rel="alternate" hreflang="es-ES" href=`${siteUrl}/es`>
-		<title>{title} - {translateString('title')}</title>
-		<meta property="og:locale" content={currentLocale}>
-		<meta property="og:title" content={translateString('title')}>
-		<meta property="og:description" content={description}>
-		<meta property="og:url" content={currentURL}>
-		<meta property="og:site_name" content={translateString('title')}>
-		<meta property="og:image" content=`${siteUrl}/logo-escorxador.webp`>
-		<ClientRouter />
-	</head>
-	<body class="text-m-gray-950 bg-m-gray-100 dark:text-m-gray-100 dark:bg-m-gray-800 overflow-x-hidden">
-		{includeHeader && <Header includeMainMenu={mainMenu} />}
-		<slot />
-		{includeFooter && <Footer />}
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="alternate" hreflang="ca-ES" href={siteUrl} />
+    <link rel="alternate" hreflang="es-ES" href=`${siteUrl}/es` />
+    <title>{title} - {translateString('title')}</title>
+    <meta property="og:locale" content={currentLocale} />
+    <meta property="og:title" content={translateString('title')} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={currentURL} />
+    <meta property="og:site_name" content={translateString('title')} />
+    <meta property="og:image" content=`${siteUrl}/logo-escorxador.webp` />
+    <ClientRouter />
+  </head>
+  <body
+    class="text-m-gray-950 bg-m-gray-100 dark:text-m-gray-100 dark:bg-m-gray-800 overflow-x-hidden"
+  >
+    <Header includeMainMenu={mainMenu} />
+    <slot />
+    {includeFooter && <Footer />}
+  </body>
 </html>
 
 <script>
-	document.addEventListener('astro:page-load', () => {
-		const body = document.body;
-		const containerNavigation = document.getElementById("container-navigation") as HTMLElement;
-		const iconClose = document.getElementById("icon-close") as HTMLElement;
-		const iconOpen = document.getElementById("icon-open") as HTMLElement;
-		const mobileDropdownToggleButton = document.getElementById("mobile-dropdown-toggle");
-		if(!containerNavigation) return;
-		const menuLinks = containerNavigation.querySelectorAll("a");
+  document.addEventListener('astro:page-load', () => {
+    const body = document.body;
+    const containerNavigation = document.getElementById(
+      'container-navigation'
+    ) as HTMLElement;
+    const iconClose = document.getElementById('icon-close') as HTMLElement;
+    const iconOpen = document.getElementById('icon-open') as HTMLElement;
+    const mobileDropdownToggleButton = document.getElementById(
+      'mobile-dropdown-toggle'
+    );
+    if (!containerNavigation) return;
+    const menuLinks = containerNavigation.querySelectorAll('a');
 
+    function toggleMobileMenu() {
+      body.classList.toggle('h-dvh');
+      body.classList.toggle('overflow-y-hidden');
+      containerNavigation.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+    }
 
-		function toggleMobileMenu() {
-			body.classList.toggle("h-dvh");
-			body.classList.toggle("overflow-y-hidden");
-			containerNavigation.classList.toggle("hidden");
-			iconClose.classList.toggle("hidden");
-			iconOpen.classList.toggle("hidden");
-		}
+    function closeMobileMenu() {
+      body.classList.remove('h-dvh');
+      body.classList.remove('overflow-y-hidden');
+      containerNavigation.classList.add('hidden');
+      iconClose.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+    }
 
-		function closeMobileMenu() {
-			body.classList.remove("h-dvh");
-			body.classList.remove("overflow-y-hidden");
-			containerNavigation.classList.add("hidden");
-			iconClose.classList.add("hidden");
-			iconOpen.classList.remove("hidden");
-		}
+    function handleOutsideClick(event: Event) {
+      const target = event.target as HTMLElement;
+      if (
+        !target.closest('#container-navigation') &&
+        !target.closest('.mobile-dropdown-toggle')
+      ) {
+        if (!containerNavigation.classList.contains('hidden')) {
+          closeMobileMenu();
+        }
+      }
+    }
 
-		function handleOutsideClick(event: Event) {
-			const target = event.target as HTMLElement;
-			if (!target.closest("#container-navigation") && !target.closest(".mobile-dropdown-toggle")) {
-				if (!containerNavigation.classList.contains("hidden")) {
-					closeMobileMenu();
-				}
-			}
-		}
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
 
-		menuLinks.forEach(link => {
-			link.addEventListener("click", closeMobileMenu);
-		});
+    mobileDropdownToggleButton?.addEventListener('click', toggleMobileMenu);
+    document.addEventListener('click', handleOutsideClick);
 
-		mobileDropdownToggleButton?.addEventListener("click", toggleMobileMenu);
-		document.addEventListener("click", handleOutsideClick);
+    function cleanup() {
+      menuLinks.forEach(link => {
+        link.removeEventListener('click', closeMobileMenu);
+      });
+      mobileDropdownToggleButton?.removeEventListener(
+        'click',
+        toggleMobileMenu
+      );
+      document.removeEventListener('click', handleOutsideClick);
+    }
 
-		function cleanup() {
-			menuLinks.forEach(link => {
-				link.removeEventListener("click", closeMobileMenu);
-			});
-			mobileDropdownToggleButton?.removeEventListener("click", toggleMobileMenu);
-			document.removeEventListener("click", handleOutsideClick);
-		}
-
-		document.addEventListener("astro:before-preparation", cleanup, { once: true });
-	});
+    document.addEventListener('astro:before-preparation', cleanup, {
+      once: true,
+    });
+  });
 </script>

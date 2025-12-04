@@ -6,9 +6,9 @@ const translateString = useTranslations(lang);
 const includeMainMenu = Astro.props.includeMainMenu;
 ---
 
-<header class="">
-    <div class="container mx-auto p-4 md:px-8">
-        <div class="flex items-center justify-between">
+<header>
+	<div class="container mx-auto p-4 md:px-8">
+		<div class="flex items-center justify-between">
 			{includeMainMenu &&
 				<button id="mobile-dropdown-toggle" class="p-2 mobile-dropdown-toggle order-last static lg:hidden" type="button">
 					<span class="sr-only">{translateString('accessMenu')}</span>
@@ -19,10 +19,10 @@ const includeMainMenu = Astro.props.includeMainMenu;
 					<MainMenu />
 				</div>
 			}
-            <nav id="lang-menu" class="md:text-sm uppercase">
-                <a href="/" class="mr-4" arial-label="català">ca</a>
-                <a href="/es" arial-label="castellano">es</a>
-            </nav>
-        </div>
-    </div>
+			<nav id="lang-menu" class="md:text-sm uppercase">
+				<a href="/" class="mr-4" arial-label="català">ca</a>
+				<a href="/es" arial-label="castellano">es</a>
+			</nav>
+		</div>
+	</div>
 </header>

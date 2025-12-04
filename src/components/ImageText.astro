@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  containerClasses?: string;
+  imageUrl: ImageMetadata;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageLeft?: boolean;
+}
+
+const {
+  containerClasses = '',
+  imageUrl,
+  imageAlt = '',
+  imageWidth = 1400,
+  imageLeft = true,
+} = Astro.props;
+---
+
+<div class={containerClasses}>
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+      <Image
+        src={imageUrl}
+        alt={imageAlt}
+        width={imageWidth}
+        class:list={[{ 'order-1': imageLeft, 'order-2': !imageLeft }]}
+      />
+      <div
+        class:list={[
+          'mt-8 lg:mt-0',
+          { 'order-2': imageLeft, 'order-1': !imageLeft },
+        ]}
+      >
+        <slot name="text" />
+      </div>
+    </div>
+  </div>
+</div>
