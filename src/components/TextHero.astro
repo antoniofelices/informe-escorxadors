@@ -1,14 +1,16 @@
 ---
 interface Props {
   fullHeightCenter?: boolean;
+  classes?: string;
 }
 
-const { fullHeightCenter = false } = Astro.props;
+const { fullHeightCenter = false, classes } = Astro.props;
 ---
 
 <div
   class:list={[
     'hero-section',
+    classes,
     { 'min-h-dvh  flex items-center justify-center': fullHeightCenter },
   ]}
 >

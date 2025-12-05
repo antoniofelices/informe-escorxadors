@@ -20,7 +20,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 ---
 
 <Layout title="informe escorxadors IDRA" includeFooter={true}>
-  <TextHero fullHeightCenter={false}>
+  <TextHero fullHeightCenter={false} classes="bg-yellow-100">
     <div
       slot="content1"
       class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
@@ -28,7 +28,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       <h1 class="text-4xl lg:text-8xl font-bold mb-6">
         Implicacions econòmiques i ecològiques de dos models oposats
       </h1>
-      <p class="mb-12 max-w-2xl mx-auto">
+      <p class="mb-4 max-w-2xl mx-auto">
         Una infografia basada en el cas de la finca ecològica Llavora i de
         l'Escorxador públic-comunitari de l'Armentera.
       </p>
@@ -36,7 +36,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </TextHero>
 
   <ScreenSplitTwo title="Origen de l'alimentació">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Soja transgenica</strong>.<br />Genera <strong
@@ -49,7 +49,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <Image src={eeuu} alt="" />
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Cultius locals</strong>.<br />Hi ha un vincle directe entre
@@ -61,7 +61,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Infraestructures">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li class="mb-4">
           <strong>Bunge i Elian</strong>.<br />Processen la soja que entra pel
@@ -84,7 +84,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <Image src={infrastructures} alt="" class="md:-mt-20" />
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong
@@ -97,7 +97,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Porcs sacrificats">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li class="mb-4">
           <strong>Cada any a Catalunya</strong> es sacrifiquen.
@@ -114,7 +114,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </p>
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li class="mb-4"><strong>A l’Escorxador de l’Armentera</strong></li>
       </ul>
@@ -132,7 +132,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Benestar animal">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Milers de porcs en un espai reduït i interior</strong><br
@@ -141,7 +141,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong
@@ -155,7 +155,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Aigua">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li><strong>Genera estrès hídric</strong><br />L’ús d’aigua és de…</li>
       </ul>
@@ -174,7 +174,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </div>
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li><strong>Pateix estrès hídric</strong>.</li>
       </ul>
@@ -182,7 +182,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Purins">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong
@@ -199,7 +199,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </p>
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong
@@ -211,7 +211,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Emissions">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li><strong>Emissions d’efecte hivernacle</strong>.</li>
       </ul>
@@ -223,7 +223,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </p>
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Genera menys carboni i captura part del que genera</strong>.
@@ -233,7 +233,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="A qui beneficia">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Alimenta els beneficis econòmics dels grans actors</strong><br
@@ -255,7 +255,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </div>
       </div>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Genera menys carboni i captura part del que genera</strong>.
@@ -265,7 +265,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Democràcia">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong
@@ -275,7 +275,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       </ul>
       <Image src={democracy00} alt="" class="mt-8" />
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Diversitat d’actors participen de les decisions</strong>.<br
@@ -288,7 +288,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Ocupació">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Llocs de treball precaris i desvinculats del territori</strong
@@ -298,7 +298,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Ocupació de qualitat vinculada al territori</strong>.<br />A
@@ -310,7 +310,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Consum final">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Carn de baixa qualitat</strong>.<br />S’exporta
@@ -319,7 +319,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       </ul>
       <Image src={finalConsumer00} alt="" class="mt-8" />
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Carn de qualitat</strong>.<br />Proveeix <strong
@@ -332,14 +332,14 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   </ScreenSplitTwo>
 
   <ScreenSplitTwo title="Escala">
-    <div slot="content1">
+    <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>De l’inici al final de la cadena</strong>.<br />+20.000 km2.
         </li>
       </ul>
     </div>
-    <div slot="content2">
+    <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>L’Escorxador de l’Armentera</strong>.<br /><strong

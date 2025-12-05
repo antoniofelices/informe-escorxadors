@@ -9,7 +9,7 @@ import diagram from '@assets/images/diagram.svg';
 ---
 
 <Layout title="informe escorxadors IDRA" includeFooter={true}>
-  <TextHero fullHeightCenter={false}>
+  <TextHero fullHeightCenter={false} classes="bg-blue-100 mb-16">
     <div
       slot="content1"
       class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
@@ -17,9 +17,10 @@ import diagram from '@assets/images/diagram.svg';
       <h1 class="text-4xl lg:text-8xl font-bold mb-6">
         Els recorreguts de l’Escorxador de l’Armentera
       </h1>
-      <p class="mb-12 max-w-2xl mx-auto">A subtitle, please.</p>
+      <p class="mb-4 max-w-2xl mx-auto">A subtitle, please.</p>
     </div>
   </TextHero>
+
   <ImageText imageUrl={mapOviGermansColl}>
     <div slot="text" class="max-w-lg h-full">
       <div class="flex flex-col gap-4 h-full justify-between">
