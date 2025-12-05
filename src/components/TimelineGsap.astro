@@ -6,19 +6,24 @@ const periods = Astro.props.periods;
 
 <div class="container mx-auto px-4 md:px-8">
   <div class="timeline">
-    <div class="timeline-line bg-linear-to-bl from-green-500 to-green-400">
+    <div
+      class="timeline-line bg-linear-to-bl from-green-500 to-green-400 w-0.5"
+    >
     </div>
 
     {
       periods.map((period: any) => {
         return (
-          <div class="timeline-item mb-12 grid gap-5 lg:grid-cols-4">
-            <Image
-              src={period.image}
-              alt={period.altImage}
-              class="timeline-icon lg:col-span-1 lg:col-start-2"
-            />
-            <div class="timeline-content lg:col-span-2">
+          <div class="timeline-item mb-12 grid grid-cols-1 md:gap-16 md:grid-cols-2">
+            <div class="self-center justify-self-center">
+              <Image
+                src={period.image}
+                alt={period.altImage}
+                class="timeline-icon"
+                width={300}
+              />
+            </div>
+            <div class="timeline-content">
               <p>
                 <span class="bg-green-600 text-xs text-white uppercase p-1">
                   {period.time}
@@ -30,8 +35,8 @@ const periods = Astro.props.periods;
                 <h3 class="uppercase text-xs font-bold">
                   {period.description1}
                 </h3>
-                <p class="mb-4">{period.text1}.</p>
-                <p class="mb-4">{period.text2}.</p>
+                <p class="mb-4 text-l">{period.text1}.</p>
+                <p class="mb-4 text-l">{period.text2}.</p>
               </div>
 
               <div class="example pb-3">
@@ -114,10 +119,9 @@ const periods = Astro.props.periods;
         ease: 'power2.out',
       });
       gsap.to(icon, {
-        scale: 1.1,
-        rotation: 5,
+        scale: 1.02,
         duration: 0.3,
-        ease: 'back.out(2)',
+        ease: 'power2.out',
       });
     });
 
@@ -129,9 +133,8 @@ const periods = Astro.props.periods;
       });
       gsap.to(icon, {
         scale: 1,
-        rotation: 0,
         duration: 0.3,
-        ease: 'back.out(2)',
+        ease: 'power2.out',
       });
     });
   });
@@ -155,7 +158,7 @@ const periods = Astro.props.periods;
 
   .timeline-line {
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 0;
     width: 4px;
     height: 100%;
