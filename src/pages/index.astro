@@ -1,40 +1,106 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
-import TextHero from '@components/TextHero.astro';
-import {
-  getLangFromUrl,
-  useTranslations,
-  useTranslatedPath,
-} from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const translateString = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout title="informe escorxadors IDRA" includeFooter={false} mainMenu={false}>
-  <TextHero fullHeightCenter={false}>
-    <div slot="content1" class="container mx-auto p-4 md:px-8 h-dvh">
-      <div class="h-1/2">
-        <h1 class="text-4xl lg:text-12xl font-bold mb-4">
+<Layout
+  title="informe escorxadors IDRA"
+  includeFooter={false}
+  includeHeader={false}
+>
+  <div class="container mx-auto px-4 md:px-8">
+    <div
+      class="grid gap-8 grid-rows-[3rem_30vh_1fr] md:grid-rows-[3rem_45vh_1fr] md:h-dvh"
+    >
+      <nav id="lang-menu" class="uppercase text-xs py-4">
+        <a href="/" class="mr-4" arial-label="català">ca</a>
+        <a href="/es" arial-label="castellano">es</a>
+      </nav>
+
+      <div class="self-end mb-2 md:mb-12 m-a-from-bottom-1">
+        <h1 class="text-4xl lg:text-11xl 2xl:text-20xl font-bold mb-4">
           Informe Escorxadors
         </h1>
-        <p>Some text explaining what can be found here… lorem ipsum</p>
+        <p class="max-w-2xl 2xl:text-xl lg:py-2 2xl:py-4">
+          Some text explaining what can be found here… Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Morbi purus nibh, finibus ac finibus ut, volutpat non orci.
+        </p>
       </div>
-      <div class="grid lg:grid-cols-3">
-        <a href={translatePath('/cronologia/')} class="block">
-          <span>{translateString('navTimeline')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+
+      <div class="grid gap-8 md:grid-cols-3 m-a-from-bottom-2">
+        <a href="/cronologia" class="bg-green-100 p-4">
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">Cronologia</h2>
+              <p class="text-sm">
+                Els escorxadors municipals.<br />Breu història d’una
+                infraestructura clau.
+              </p>
+            </div>
+
+            <Icon name="arrow-right" class="text-xs text-black" />
+          </div>
         </a>
-        <a href={translatePath('/comparativa/')} class="block">
-          <span>{translateString('navComparative')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        <a href="/comparativa" class="bg-yellow-100 p-4">
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">Comparativa</h2>
+              <p class="text-sm">
+                Implicacions econòmiques i ecològiques de dos models oposats.
+              </p>
+              <p class="text-sm">
+                Una infografia basada en el cas de la finca ecològica Llavora i
+                de l'Escorxador públic-comunitari de l'Armentera.
+              </p>
+            </div>
+            <Icon name="arrow-right" class="text-xs text-black" />
+          </div>
         </a>
-        <a href={translatePath('/mapes/')} class="block">
-          <span>{translateString('navMaps')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        <a href="/mapes" class="bg-blue-100 p-4">
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">
+                L’escorxador de l’Armentera.
+              </h2>
+              <p class="text-sm">
+                Un model de col·laboració público-comunitaria.
+              </p>
+              <p class="text-sm">
+                Fluxos financers, governança, mapes de recorreguts.
+              </p>
+            </div>
+            <Icon name="arrow-right" class="text-xs text-black" />
+          </div>
         </a>
       </div>
     </div>
-  </TextHero>
+  </div>
 </Layout>
+
+<script>
+  import { gsap, fadeIn } from '@lib/gsap';
+
+  const heroSections = document.querySelectorAll('.container');
+
+  heroSections.forEach(section => {
+    const element1 = section.querySelector('.m-a-from-bottom-1');
+    const element2 = section.querySelector('.m-a-from-bottom-2');
+
+    const tlHero = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        toggleActions: 'play none none reverse',
+        start: 'top 30%',
+      },
+    });
+
+    tlHero.add(fadeIn(element1)).add(fadeIn(element2));
+  });
+</script>
