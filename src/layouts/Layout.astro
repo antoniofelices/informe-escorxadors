@@ -9,6 +9,7 @@ import '@styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  includeHeader?: boolean;
   includeFooter?: boolean;
   mainMenu?: boolean;
   classesHeader?: string;
@@ -17,6 +18,7 @@ interface Props {
 const {
   title,
   description,
+  includeHeader = true,
   includeFooter = true,
   mainMenu = true,
   classesHeader = '',
@@ -51,7 +53,7 @@ const currentURL = Astro.url.href;
   <body
     class="text-gray-950 bg-gray-50 dark:text-gray-100 dark:bg-gray-800 overflow-x-hidden"
   >
-    <Header includeMainMenu={mainMenu} classes={classesHeader} />
+    {includeHeader && <Header classes={classesHeader} />}
     <slot />
     {includeFooter && <Footer />}
   </body>

@@ -3,16 +3,14 @@ import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import TextHero from '@components/TextHero.astro';
 import ImageText from '@components/ImageText.astro';
-import image1920x1080 from '@assets/images/1920x1080.jpg';
 import mapOviGermansColl from '@assets/images/map-ovi-germans-coll.svg';
+import mapPorciLlavora from '@assets/images/map-porci-llavora.svg';
+import mapBoviMudaVedella from '@assets/images/map-bovi-muda-vedella.svg';
+import mapCarnissersAmbBestiaPropi from '@assets/images/map-carnissers-amb-bestia-propi.svg';
 import diagram from '@assets/images/diagram.svg';
 ---
 
-<Layout
-  title="informe escorxadors IDRA"
-  includeFooter={true}
-  classesHeader="bg-blue-100"
->
+<Layout title="informe escorxadors IDRA" classesHeader="bg-blue-100">
   <TextHero fullHeightCenter={false} classes="bg-blue-100 mb-16">
     <div
       slot="content1"
@@ -46,7 +44,7 @@ import diagram from '@assets/images/diagram.svg';
       </div>
     </div>
   </ImageText>
-  <ImageText imageUrl={image1920x1080} classes="pt-12 md:pt-24">
+  <ImageText imageUrl={mapPorciLlavora} classes="pt-12 md:pt-24">
     <div slot="text" class="max-w-lg h-full">
       <div class="flex flex-col gap-4 h-full justify-between">
         <div>
@@ -66,7 +64,7 @@ import diagram from '@assets/images/diagram.svg';
       </div>
     </div>
   </ImageText>
-  <ImageText imageUrl={image1920x1080} classes="pt-12 md:pt-24">
+  <ImageText imageUrl={mapBoviMudaVedella} classes="pt-12 md:pt-24">
     <div slot="text" class="max-w-lg h-full">
       <div class="flex flex-col gap-4 h-full justify-between">
         <div>
@@ -81,14 +79,14 @@ import diagram from '@assets/images/diagram.svg';
         </div>
         <div>
           <ul class="border-l-4 border-l-black pl-2">
-            <li><strong>47 minuts</strong></li>
-            <li>40,2 Km</li>
+            <li><strong>1h 19 minuts</strong></li>
+            <li>80 Km</li>
           </ul>
         </div>
       </div>
     </div>
   </ImageText>
-  <ImageText imageUrl={image1920x1080} classes="pt-12 md:py-24">
+  <ImageText imageUrl={mapCarnissersAmbBestiaPropi} classes="pt-12 md:py-24">
     <div slot="text" class="max-w-lg h-full">
       <div class="flex flex-col gap-4 h-full justify-between">
         <div>
