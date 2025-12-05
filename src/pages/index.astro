@@ -1,36 +1,40 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
 import TextHero from '@components/TextHero.astro';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const translateString = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={false} >
-	<TextHero fullHeightCenter={false}>
-		<div slot="content1" class="container mx-auto p-4 md:px-8 h-dvh">
-			<div class="h-1/2">
-				<h1 class="text-4xl lg:text-12xl font-bold mb-4">
-					Informe Escorxadors
-				</h1>
-				<p>Some text explaining what can be found here… lorem ipsum</p>
-			</div>
-			<div class="grid lg:grid-cols-3">
-				<a href={translatePath('/cronologia/')} class="block">
-					<span>{translateString('navTimeline')}</span>
-					<Icon name="arrow-right" class="text-3xl text-orange-500" />
-				</a>
-				<a href={translatePath('/comparativa/')} class="block">
-					<span>{translateString('navComparative')}</span>
-					<Icon name="arrow-right" class="text-3xl text-orange-500" />
-				</a>
-				<a href={translatePath('/mapes/')} class="block">
-					<span>{translateString('navMaps')}</span>
-					<Icon name="arrow-right" class="text-3xl text-orange-500" />
-				</a>
-			</div>
-		</div>
-	</TextHero>
+<Layout title="informe escorxadors IDRA" includeFooter={false} mainMenu={false}>
+  <TextHero fullHeightCenter={false}>
+    <div slot="content1" class="container mx-auto p-4 md:px-8 h-dvh">
+      <div class="h-1/2">
+        <h1 class="text-4xl lg:text-12xl font-bold mb-4">
+          Informe Escorxadors
+        </h1>
+        <p>Some text explaining what can be found here… lorem ipsum</p>
+      </div>
+      <div class="grid lg:grid-cols-3">
+        <a href={translatePath('/cronologia/')} class="block">
+          <span>{translateString('navTimeline')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+        <a href={translatePath('/comparativa/')} class="block">
+          <span>{translateString('navComparative')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+        <a href={translatePath('/mapes/')} class="block">
+          <span>{translateString('navMaps')}</span>
+          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        </a>
+      </div>
+    </div>
+  </TextHero>
 </Layout>

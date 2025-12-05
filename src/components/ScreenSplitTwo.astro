@@ -1,45 +1,51 @@
 ---
 interface Props {
-	title: string
+  title: string;
 }
 
-const {
-	title = '',
-} = Astro.props;
+const { title = '' } = Astro.props;
 ---
 
 <div class="slide m-bg-split-2">
-    <div class="container mx-auto p-4 md:p-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
-            <div class="order-2 md:order-1 bg-red-400">
-                <div class="text-center py-2 border-b border-current uppercase text-xs font-bold">
-                    <span class="md:hidden">Porc industrial</span>
-                    <h2>{title}</h2>
-                </div>
-                <div class="p-4 md:px-18">
-                    <slot name="content1" />
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="text-center py-2 border-b border-current uppercase text-xs font-bold">
-                    <span class="md:hidden">Porc ecològic</span>
-                    <h2>{title}</h2>
-                </div>
-                <div class="p-4 md:px-18">
-                    <slot name="content2" />
-                </div>
-            </div>
+  <div class="container mx-auto p-4 md:p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+      <div class="order-2 md:order-1 bg-red-400">
+        <div
+          class="text-center py-2 border-b border-current uppercase text-xs font-bold"
+        >
+          <span class="md:hidden">Porc industrial</span>
+          <h2>{title}</h2>
         </div>
+        <div class="p-4 md:py-12 md:px-18">
+          <slot name="content1" />
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div
+          class="text-center py-2 border-b border-current uppercase text-xs font-bold"
+        >
+          <span class="md:hidden">Porc ecològic</span>
+          <h2>{title}</h2>
+        </div>
+        <div class="p-4 md:py-12 md:px-18">
+          <slot name="content2" />
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <style>
-    /* .m-bg-split-2 {
+  /* .m-bg-split-2 {
         background: linear-gradient(360deg, var(--color-red-400) 50%, transparent 50%);
     }    */
-    @media (min-width: 768px) {
-     	.m-bg-split-2 {
-            background: linear-gradient(90deg, var(--color-red-400) 50%, transparent 50%);
-        }   
+  @media (min-width: 768px) {
+    .m-bg-split-2 {
+      background: linear-gradient(
+        90deg,
+        var(--color-red-400) 50%,
+        transparent 50%
+      );
     }
+  }
 </style>

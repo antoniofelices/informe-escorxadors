@@ -19,241 +19,340 @@ import TextHero from '@components/TextHero.astro';
 import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 ---
 
-<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
+<Layout title="informe escorxadors IDRA" includeFooter={true}>
+  <TextHero fullHeightCenter={false} classes="bg-yellow-100">
+    <div
+      slot="content1"
+      class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
+    >
+      <h1 class="text-4xl lg:text-8xl font-bold mb-6">
+        Implicacions econòmiques i ecològiques de dos models oposats
+      </h1>
+      <p class="mb-4 max-w-2xl mx-auto">
+        Una infografia basada en el cas de la finca ecològica Llavora i de
+        l'Escorxador públic-comunitari de l'Armentera.
+      </p>
+    </div>
+  </TextHero>
 
-	<TextHero fullHeightCenter={true}>
-		<div slot="content1" class="container text-center mx-auto p-4 md:px-8">
-			<h1 class="text-4xl lg:text-10xl font-bold mb-8">
-				Implicacions econòmiques i ecològiques de dos models oposats
-			</h1>
-			<p class="mb-12 max-w-2xl mx-auto">
-				Una infografia basada en el cas de la finca ecològica Llavora i de l'Escorxador públic-comunitari de l'Armentera.
-			</p>
-		</div>
-	</TextHero>
+  <ScreenSplitTwo title="Origen de l'alimentació">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Soja transgenica</strong>.<br />Genera <strong
+            >desforestació</strong
+          > i vulneracions dels Drets Humans.
+        </li>
+      </ul>
+      <div class="flex lg:gap-8 justify-center mt-8">
+        <Image src={brasil} alt="" />
+        <Image src={eeuu} alt="" />
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Cultius locals</strong>.<br />Hi ha un vincle directe entre
+          ramaders i agricultors.
+        </li>
+      </ul>
+      <Image src={image1920x1080} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Origen de l'alimentació">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Soja transgenica</strong>.<br>Genera <strong>desforestació</strong> i vulneracions dels Drets Humans.</li>
-			</ul>
-			<div class="flex lg:gap-8 justify-center mt-8">
-				<Image src={brasil} alt="" />
-				<Image src={eeuu} alt="" />
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Cultius locals</strong>.<br>Hi ha un vincle directe entre ramaders i agricultors.</li>
-			</ul>
-			<Image src={image1920x1080} alt="" class="mt-8" />
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Infraestructures">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4">
+          <strong>Bunge i Elian</strong>.<br />Processen la soja que entra pel
+          Port de Barcelona.
+        </li>
+        <li class="mb-4">
+          <strong>Vall Companys i BonÀrea</strong>.<br />Fabriquen el pinso.
+        </li>
+        <li class="mb-4">
+          <strong>Mercabarna</strong>.<br />Comercialitza cada any <strong
+            >35.000 tones de carn</strong
+          >.
+        </li>
+        <li class="mb-4">
+          <strong>Eix transversal o eix dels porcs</strong>.<br />Connecta el
+          Sagrià i Osona amb el Port de Barcelona i Europa.
+        </li>
+      </ul>
+      <div class="">
+        <Image src={infrastructures} alt="" class="md:-mt-20" />
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Petita indústria i infraestructures arrelades al territori</strong
+          ><br />Molí de gra<br />Petites finques<br />Escorxador municipal
+        </li>
+      </ul>
+      <Image src={image1920x1080} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Infraestructures">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li class="mb-4"><strong>Bunge i Elian</strong>.<br>Processen la soja que entra pel Port de Barcelona.</li>
-				<li class="mb-4"><strong>Vall Companys i BonÀrea</strong>.<br>Fabriquen el pinso.</li>
-				<li class="mb-4"><strong>Mercabarna</strong>.<br>Comercialitza cada any <strong>35.000 tones de carn</strong>.</li>
-				<li class="mb-4"><strong>Eix transversal o eix dels porcs</strong>.<br>Connecta el Sagrià i Osona amb el Port de Barcelona i Europa.</li>
-			</ul>
-			<div class="">
-				<Image src={infrastructures} alt="" class="md:-mt-20" />
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Petita indústria i infraestructures arrelades al territori</strong><br>Molí de gra<br>Petites finques<br>Escorxador municipal</li>
-			</ul>
-			<Image src={image1920x1080} alt="" class="mt-8" />
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Porcs sacrificats">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4">
+          <strong>Cada any a Catalunya</strong> es sacrifiquen.
+        </li>
+      </ul>
+      <div>
+        <p class="text-8xl font-bold mb-4">23 millons</p>
+        <Image src={industrialPigs} alt="" class="mb-4" />
+      </div>
+      <div>
+        <p>
+          <strong>14 milions</strong><br />als escorxadors de Valls Companys,
+          Grupo Batallé-Juia i Costa Brava.
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4"><strong>A l’Escorxador de l’Armentera</strong></li>
+      </ul>
+      <div class="flex items-start gap-4">
+        <Image src={ecologicPig} alt="" class="" />
+        <div>
+          <p class="text-8xl font-bold mb-4 text-green-500">3.500</p>
+          <p>
+            animals sacrificats cada any en una relació directa amb els ramaders
+            locals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Porcs sacrificats">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li class="mb-4"><strong>Cada any a Catalunya</strong> es sacrifiquen.</li>
-			</ul>
-			<div>
-				<p class="text-8xl font-bold mb-4">23 millons</p>
-				<Image src={industrialPigs} alt="" class="mb-4" />
-			</div>
-			<div>
-				<p><strong>14 milions</strong><br>als escorxadors de Valls Companys, Grupo Batallé-Juia i Costa Brava.</p>
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li class="mb-4"><strong>A l’Escorxador de l’Armentera</strong></li>
-			</ul>
-			<div class="flex items-start gap-4">
-				<Image src={ecologicPig} alt="" class="" />
-				<div>
-					<p class="text-8xl font-bold mb-4 text-green-500">3.500</p>
-					<p>animals sacrificats cada any en una relació directa amb els ramaders locals.</p>
-				</div>
-			</div>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Benestar animal">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Milers de porcs en un espai reduït i interior</strong><br
+          />Els animals són transportats centenars de quilòmetres fins a
+          l’escorxador.
+        </li>
+      </ul>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Desenes o pocs centenars de porcs en un espai ampli amb
+            possibilitat de sortir a l’exterior</strong
+          >.<br />Els animals són transportats pocs quilòmetres fins a
+          l’escorxador.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Benestar animal">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Milers de porcs en un espai reduït i interior</strong><br>Els animals són transportats centenars de quilòmetres fins a l’escorxador.</li>
-			</ul>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Desenes o pocs centenars de porcs en un espai ampli amb possibilitat de sortir a l’exterior</strong>.<br>Els animals són transportats pocs quilòmetres fins a l’escorxador.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Aigua">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li><strong>Genera estrès hídric</strong><br />L’ús d’aigua és de…</li>
+      </ul>
+      <div class="flex justify-center gap-8 mt-8">
+        <div class="px-4 md:px-8">
+          <Image src={water00} alt="" />
+          <p class="mt-4 uppercase text-center text-xs">
+            Indústria catalana del porc
+          </p>
+        </div>
+        <div class="px-4 md:px-8">
+          <Image src={water01} alt="" />
+          <p class="mt-4 uppercase text-center text-xs">
+            totes les llars de catalunya
+          </p>
+        </div>
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li><strong>Pateix estrès hídric</strong>.</li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Aigua">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Genera estrès hídric</strong><br>L’ús d’aigua és de…</li>
-			</ul>
-			<div class="flex justify-center gap-8 mt-8">
-				<div class="px-4 md:px-8">
-					<Image src={water00} alt="" />
-					<p class="mt-4 uppercase text-center text-xs">Indústria catalana del porc</p>
-				</div>
-				<div class="px-4 md:px-8">
-					<Image src={water01} alt="" />
-					<p class="mt-4 uppercase text-center text-xs">totes les llars de catalunya</p>
-				</div>
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Pateix estrès hídric</strong>.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Purins">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Els purins de forma líquida contaminen la terra, l’aire i l’aigua</strong
+          >
+        </li>
+      </ul>
+      <div class="flex justify-start gap-4 mt-8">
+        <Image src={slurry} alt="" />
+        <p>
+          <strong>40%</strong><br />del territori català <strong
+            >està contaminat</strong
+          > per un excés de nitrats
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Els fems en jaç de palla reprodueixen la fertilitat del sòl</strong
+          >.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Purins">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Els purins de forma líquida contaminen la terra, l’aire i l’aigua</strong></li>
-			</ul>
-			<div class="flex justify-start gap-4 mt-8">
-				<Image src={slurry} alt="" />
-				<p><strong>40%</strong><br>del territori català <strong>està contaminat</strong> per un excés de nitrats</p>
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Els fems en jaç de palla reprodueixen la fertilitat del sòl</strong>.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Emissions">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li><strong>Emissions d’efecte hivernacle</strong>.</li>
+      </ul>
+      <div class="flex justify-start gap-4 mt-8">
+        <Image src={emissions} alt="" />
+        <p>
+          <strong>21%</strong><br />La indústria porcina catalana n’és
+          responsable
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Genera menys carboni i captura part del que genera</strong>.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Emissions">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Emissions d’efecte hivernacle</strong>.</li>
-			</ul>
-			<div class="flex justify-start gap-4 mt-8">
-				<Image src={emissions} alt="" />
-				<p><strong>21%</strong><br>La indústria porcina catalana n’és responsable</p>
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Genera menys carboni i captura part del que genera</strong>.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="A qui beneficia">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Alimenta els beneficis econòmics dels grans actors</strong><br
+          />Dades dels beneficis del 2023.
+        </li>
+      </ul>
+      <div class="mt-8">
+        <div class="flex justify-start items-center gap-4">
+          <p class="font-bold text-sm basis-auto md:basis-[120px]">
+            Vall Companys
+          </p>
+          <span class="h-5 w-20 md:w-40 bg-red-600">{''}</span>
+          <p class="font-bold text-sm">110M €</p>
+        </div>
+        <div class="flex justify-start items-center gap-4 mt-2">
+          <p class="font-bold text-sm basis-auto md:basis-[120px]">BonÀrea</p>
+          <span class="h-5 w-15 md:w-30 bg-red-600">{''}</span>
+          <p class="font-bold text-sm">81M €</p>
+        </div>
+      </div>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Genera menys carboni i captura part del que genera</strong>.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="A qui beneficia">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Alimenta els beneficis econòmics dels grans actors</strong><br>Dades dels beneficis del 2023.</li>
-			</ul>
-			<div class="mt-8">
-				<div class="flex justify-start items-center gap-4">
-					<p class="font-bold text-sm basis-auto md:basis-[120px]">Vall Companys</p>
-					<span class="h-5 w-20 md:w-40 bg-red-600">{''}</span>
-					<p class="font-bold text-sm">110M €</p>
-				</div>
-				<div class="flex justify-start items-center gap-4 mt-2">
-					<p class="font-bold text-sm basis-auto md:basis-[120px]">BonÀrea</p>
-					<span class="h-5 w-15 md:w-30 bg-red-600">{''}</span>
-					<p class="font-bold text-sm">81M €</p>
-				</div>
-			</div>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Genera menys carboni i captura part del que genera</strong>.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Democràcia">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Les decisions estan en mans d’un grup reduït d’actors i persones</strong
+          >.
+        </li>
+      </ul>
+      <Image src={democracy00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Diversitat d’actors participen de les decisions</strong>.<br
+          />A l’Escorxador de l’Armentera, de gestió cooperativa, la presa de
+          decisions és assambleària.
+        </li>
+      </ul>
+      <Image src={democracy01} alt="" class="mt-6" />
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Democràcia">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Les decisions estan en mans d’un grup reduït d’actors i persones</strong>.</li>
-			</ul>
-			<Image src={democracy00} alt="" class="mt-8" />
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Diversitat d’actors participen de les decisions</strong>.<br>A l’Escorxador de l’Armentera, de gestió cooperativa, la presa de decisions és assambleària.</li>
-			</ul>
-			<Image src={democracy01} alt="" class="mt-6" />
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Ocupació">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Llocs de treball precaris i desvinculats del territori</strong
+          >.<br />La integració vertical i la concentració industrial tendeixen
+          a <strong>destruir més llocs de treball dels que creen</strong> i generen
+          <strong>despoblació rural</strong>.
+        </li>
+      </ul>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Ocupació de qualitat vinculada al territori</strong>.<br />A
+          Llavora es creen 10 vegades més llocs de treball per porc que en una
+          finca intensiva de les mateixes dimensions.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Ocupació">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Llocs de treball precaris i desvinculats del territori</strong>.<br>La integració vertical i la concentració industrial tendeixen a <strong>destruir més llocs de treball dels que creen</strong> i generen <strong>despoblació rural</strong>.</li>
-			</ul>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Ocupació de qualitat vinculada al territori</strong>.<br>A Llavora es creen 10 vegades més llocs de treball per porc que en una finca intensiva de les mateixes dimensions.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
+  <ScreenSplitTwo title="Consum final">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Carn de baixa qualitat</strong>.<br />S’exporta
+          majoritàriament a la Xina, França i Japó.
+        </li>
+      </ul>
+      <Image src={finalConsumer00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Carn de qualitat</strong>.<br />Proveeix <strong
+            >actors arrelats al territori</strong
+          >: carnissers artesanals, petit comerç i consumidors locals.
+        </li>
+      </ul>
+      <Image src={finalConsumer01} alt="" class="mt-8 mx-auto" />
+    </div>
+  </ScreenSplitTwo>
 
-	<ScreenSplitTwo title="Consum final">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>Carn de baixa qualitat</strong>.<br>S’exporta majoritàriament a la Xina, França i Japó.</li>
-			</ul>
-			<Image src={finalConsumer00} alt="" class="mt-8" />
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>Carn de qualitat</strong>.<br>Proveeix <strong>actors arrelats al territori</strong>: carnissers artesanals, petit comerç i consumidors locals.</li>
-			</ul>
-			<Image src={finalConsumer01} alt="" class="mt-8 mx-auto" />
-		</div>
-	</ScreenSplitTwo>
-
-	<ScreenSplitTwo title="Escala">
-		<div slot="content1">
-			<ul class="list-disc">
-				<li><strong>De l’inici al final de la cadena</strong>.<br>+20.000 km2.</li>
-			</ul>
-		</div>
-		<div slot="content2">
-			<ul class="list-disc">
-				<li><strong>L’Escorxador de l’Armentera</strong>.<br><strong>Producció</strong> en un radi de 5 km i <strong>distribució</strong> en un màxim de 150 km.</li>
-			</ul>
-		</div>
-	</ScreenSplitTwo>
-
+  <ScreenSplitTwo title="Escala">
+    <div slot="content1" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>De l’inici al final de la cadena</strong>.<br />+20.000 km2.
+        </li>
+      </ul>
+    </div>
+    <div slot="content2" class="md:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>L’Escorxador de l’Armentera</strong>.<br /><strong
+            >Producció</strong
+          > en un radi de 5 km i <strong>distribució</strong> en un màxim de 150 km.
+        </li>
+      </ul>
+    </div>
+  </ScreenSplitTwo>
 </Layout>
 
-
-
 <style>
-	.m-rotate-90-deg {
-		transform: rotate(-90deg) translate(-50%, 0);
-	}
+  .m-rotate-90-deg {
+    transform: rotate(-90deg) translate(-50%, 0);
+  }
 </style>

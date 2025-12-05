@@ -47,7 +47,7 @@ const dataTimelineCa = [
         description2: 'Descripció',
         text2: 'Es tanquen 103 escorxadors municipals entre 1998 i 2022. El sacrifici es concentra en macroplantes industrials, deixant només el 2% en escorxadors de baixa capacitat',
         description3: 'Exemple històric il·lustratiu',
-        text3: 'Exemple històric il·lustratiu</strong>: El Reial Decret-Llei 7/1996 i la Llei Montoro (2013) posen fi a l’obligatorietat del servei de l’equipament escorxador com a servei públic',
+        text3: 'El Reial Decret-Llei 7/1996 i la Llei Montoro (2013) posen fi a l’obligatorietat del servei de l’equipament escorxador com a servei públic',
     },
     {
         image: escorxadormunicipal,

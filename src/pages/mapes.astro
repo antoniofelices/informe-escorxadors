@@ -1,17 +1,111 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '@layouts/Layout.astro';
 import TextHero from '@components/TextHero.astro';
+import ImageText from '@components/ImageText.astro';
+import image1920x1080 from '@assets/images/1920x1080.jpg';
+import mapOviGermansColl from '@assets/images/map-ovi-germans-coll.svg';
+import diagram from '@assets/images/diagram.svg';
 ---
 
-<Layout title="informe escorxadors IDRA" includeFooter={false} includeHeader={true} >
-	<TextHero fullHeightCenter={true}>
-		<div slot="content1" class="container text-center mx-auto p-4 md:px-8">
-			<h1 class="text-4xl lg:text-10xl font-bold mb-8">
-				Els recorreguts de l’Escorxador de l’Armentera
-			</h1>
-			<p class="mb-12 max-w-2xl mx-auto">
-				A subtitle, please.
-			</p>
-		</div>
-	</TextHero>
+<Layout title="informe escorxadors IDRA" includeFooter={true}>
+  <TextHero fullHeightCenter={false} classes="bg-blue-100 mb-16">
+    <div
+      slot="content1"
+      class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
+    >
+      <h1 class="text-4xl lg:text-8xl font-bold mb-6">
+        Els recorreguts de l’Escorxador de l’Armentera
+      </h1>
+      <p class="mb-4 max-w-2xl mx-auto">A subtitle, please.</p>
+    </div>
+  </TextHero>
+
+  <ImageText imageUrl={mapOviGermansColl}>
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl md:text-5xl font-bold mb-4">
+            Oví - Germans Coll
+          </h2>
+          <p>
+            El pas per l'Escorxador i la venda al detall permet als Germans coll
+            ingressar un 51% més per xai que si venessin l'animal viu.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>47 minuts</strong></li>
+            <li>40,2 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={image1920x1080} containerClasses="pt-12 md:pt-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl md:text-5xl font-bold mb-4">Porcí - Llavora</h2>
+          <p class="text-sm">(ecològic, integració amb molí i elaboració)</p>
+          <p>
+            El pas per l'Excorxador i la venda al detall permet a Llavora
+            ingressar un 223% més per porc que si venés l'animal viu.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>1h 42 minuts</strong></li>
+            <li>140 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={image1920x1080} containerClasses="pt-12 md:pt-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl md:text-5xl font-bold mb-4">
+            Boví - Muda vedella d’Agullana
+          </h2>
+          <p class="text-sm">(ecològic, venda en lots)</p>
+          <p>
+            El pas per l'Excorxador i la venda al detall permet a Muda ingressar
+            un 152% més per vedella que si venés l'animal viu.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>47 minuts</strong></li>
+            <li>40,2 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={image1920x1080} containerClasses="pt-12 md:py-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl md:text-5xl font-bold mb-4">
+            Carnissers amb bestiar propi - Miquel Roca i Albert Sart
+          </h2>
+          <p>
+            Els carnissers que crien el seu bestiar o s’aprovisionen localment
+            retenen el 100% del valor afegit dins d’un radi ≤20 km.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>47 minuts</strong></li>
+            <li>40,2 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <div class="container mx-auto p-4 md:px-8 md:py-24">
+    <Image src={diagram} alt="" />
+  </div>
 </Layout>
