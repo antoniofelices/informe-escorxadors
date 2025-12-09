@@ -8,6 +8,7 @@ export const stringToTranslate = {
     navTimeline: 'Cronologia',
     navComparative: 'Comparativa',
     navMaps: 'L’escorxador de l’Armentera',
+    mainNavigation: 'Menu principal',
   },
   es: {
     title: 'Informe mataderos municipales',
@@ -18,5 +19,6 @@ export const stringToTranslate = {
     navTimeline: 'Cronología',
     navComparative: 'Comparativa',
     navMaps: 'L’escorxador de l’Armentera',
+    mainNavigation: 'Menu principal',
   },
 };
