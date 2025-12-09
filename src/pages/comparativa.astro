@@ -46,13 +46,29 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
     </div>
   </TextHero>
 
+  <ScreenSplitTwo>
+    <div slot="content1" class="text-center">
+      <h2 class="font-bold mb-4 md:text-5xl">Porc industrial</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producció intensiva i industrial destinada als mercats internacionals.
+      </p>
+    </div>
+    <div slot="content2" class="text-center">
+      <h2 class="font-bold mb-4 md:text-5xl">Porc ecològic</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producció extensiva i/o ecològica destinada a l’economia i consum de
+        proximitat.
+      </p>
+    </div>
+  </ScreenSplitTwo>
+
   <ScreenSplitTwo title="Origen de l'alimentació">
     <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Soja transgenica</strong>.<br />Genera <strong
             >desforestació</strong
-          > i vulneracions dels Drets Humans.
+          > i vulneracions dels Drets Humans.<sup>2</sup>
         </li>
       </ul>
       <div class="flex lg:gap-8 justify-center mt-8">
@@ -67,7 +83,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ramaders i agricultors.
         </li>
       </ul>
-      <Image src={origin02} alt="" class="mt-8" />
+      <Image src={origin02} alt="" class="mt-12" />
     </div>
   </ScreenSplitTwo>
 
@@ -92,7 +108,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
       <div>
-        <Image src={infrastructures00} alt="" class="md:-mt-20" />
+        <Image src={infrastructures00} alt="" />
       </div>
     </div>
     <div slot="content2" class="md:text-xl">
@@ -103,7 +119,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ><br />Molí de gra<br />Petites finques<br />Escorxador municipal
         </li>
       </ul>
-      <Image src={infrastructures01} alt="" class="mt-8" />
+      <Image src={infrastructures01} alt="" class="mt-12" />
     </div>
   </ScreenSplitTwo>
 
@@ -121,7 +137,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       <div>
         <p>
           <strong>14 milions</strong><br />als escorxadors de Valls Companys,
-          Grupo Batallé-Juia i Costa Brava.
+          Grupo Batallé-Juia i Costa Brava.<sup>6</sup>
         </p>
       </div>
     </div>
@@ -149,7 +165,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong>Milers de porcs en un espai reduït i interior</strong><br
           />Els animals són transportats <strong
             >centenars de quilòmetres</strong
-          > fins a l’escorxador.
+          > fins a l’escorxador.<sup>7</sup>
         </li>
       </ul>
       <Image src={animalCare00} alt="" class="mt-8" />
@@ -171,7 +187,10 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   <ScreenSplitTwo title="Aigua">
     <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
-        <li><strong>Genera estrès hídric</strong><br />L’ús d’aigua és de…</li>
+        <li>
+          <strong>Genera estrès hídric</strong><sup>8</sup><br />L’ús d’aigua és
+          de…
+        </li>
       </ul>
       <div class="flex justify-center gap-8 mt-8">
         <div class="px-4 md:px-8">
@@ -210,7 +229,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <p>
           <strong>40%</strong><br />del territori català <strong
             >està contaminat</strong
-          > per un excés de nitrats
+          > per un excés de nitrats<sup>10</sup>
         </p>
       </div>
     </div>
@@ -236,7 +255,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <p>
           <strong>21%</strong><br />La <strong
             >indústria porcina catalana</strong
-          > n’és responsable
+          > n’és responsable<sup>9</sup>
         </p>
       </div>
     </div>
@@ -321,7 +340,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong>Llocs de treball precaris i desvinculats del territori</strong
           >.<br />La integració vertical i la concentració industrial tendeixen
           a <strong>destruir més llocs de treball dels que creen</strong> i generen
-          <strong>despoblació rural</strong>.
+          <strong>despoblació rural</strong><sup>4, 5</sup>.
         </li>
       </ul>
       <Image src={labour00} alt="" class="mt-8" />
@@ -345,7 +364,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong>Carn de baixa qualitat</strong>.<br />S’exporta
           majoritàriament a la <strong>Xina</strong>, <strong>França</strong> i <strong
             >Japó</strong
-          >.
+          ><sup>11</sup>.
         </li>
       </ul>
       <Image src={finalConsumer00} alt="" class="mt-8" />
@@ -366,7 +385,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
     <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
-          <strong>De l’inici al final de la cadena</strong>.
+          <strong>De l’inici al final de la cadena</strong><sup>1</sup>.
         </li>
       </ul>
       <p class="text-3xl font-bold mt-4">+20.000 km.</p>
@@ -385,6 +404,44 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <p class="text-3xl font-bold">155 km.</p>
       </div>
     </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo>
+    <div slot="content1" class="text-sm">
+      <ul>
+        <li>
+          <sup>1</sup> GRAIN (2001). La ruta de la soja: el papel del puerto de Barcelona.
+        </li>
+        <li><sup>2</sup> Idescat.</li>
+        <li><sup>3</sup> Mercabarna (2024). Mercabarna en xifres.</li>
+        <li>
+          <sup>4</sup> Forner, G. (2022). Explotación animal, explotación laboral,
+          El Salto Diario.
+        </li>
+        <li>
+          <sup>5</sup> Ecologistas en acción (2001). Ganadería industrial y despoblación.
+        </li>
+        <li>
+          <sup>6</sup> García, F. (2022). Això no toca. Les emissions ocultes del
+          sector porcí català. Barcelona: Justícia Alimentària
+        </li>
+        <li><sup>7</sup> Greenpeace (2024). Macrogranjas.</li>
+        <li><sup>8</sup> Arran de Terra (2024). Arran de Terra</li>
+        <li>
+          <sup>9</sup> García, F. (2022). Això no toca. Les emissions ocultes del
+          sector porcí català. Barcelona: Justícia Alimentària.
+        </li>
+        <li>
+          <sup>10</sup> Agència Catalana de l’Aigua (2022). Avaluació de la problemàtica
+          originada per l’excés de nitrats d’origen agrari en les masses d’aigua subterrànies
+          a Catalunya. Generalitat de Catalunya.
+        </li>
+        <li>
+          <sup>11</sup> Prodeca (2024). El sector de la carne y los embutidos.
+        </li>
+      </ul>
+    </div>
+    <div slot="content2"></div>
   </ScreenSplitTwo>
 </Layout>
 
