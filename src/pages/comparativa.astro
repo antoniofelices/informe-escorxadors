@@ -1,26 +1,37 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import image1920x1080 from '@assets/images/1920x1080.jpg';
-import brasil from '@assets/images/infographic/brasil.svg';
-import eeuu from '@assets/images/infographic/eeuu.svg';
-import infrastructures from '@assets/images/infographic/infrastructures.svg';
-import industrialPigs from '@assets/images/infographic/industrial-pigs.svg';
-import ecologicPig from '@assets/images/infographic/ecologic-pig.svg';
-import water00 from '@assets/images/infographic/water00.svg';
-import water01 from '@assets/images/infographic/water01.svg';
-import slurry from '@assets/images/infographic/slurry.svg';
-import democracy00 from '@assets/images/infographic/democracy00.svg';
-import democracy01 from '@assets/images/infographic/democracy01.svg';
-import emissions from '@assets/images/infographic/emissions.svg';
+import { Icon } from 'astro-icon/components';
+
+import origin00 from '@assets/images/infographic/origin-00.svg';
+import origin01 from '@assets/images/infographic/origin-01.svg';
+import origin02 from '@assets/images/infographic/origin-02.svg';
+import infrastructures00 from '@assets/images/infographic/infrastructures-00.svg';
+import infrastructures01 from '@assets/images/infographic/infrastructures-01.svg';
+import slaughter00 from '@assets/images/infographic/slaughter-00.svg';
+import slaughter01 from '@assets/images/infographic/slaughter-01.svg';
+import animalCare00 from '@assets/images/infographic/animal-care-00.svg';
+import animalCare01 from '@assets/images/infographic/animal-care-01.svg';
+import water00 from '@assets/images/infographic/water-00.svg';
+import water01 from '@assets/images/infographic/water-01.svg';
+import water02 from '@assets/images/infographic/water-02.svg';
+import slurry00 from '@assets/images/infographic/slurry-00.svg';
+import slurry01 from '@assets/images/infographic/slurry-01.svg';
+import democracy00 from '@assets/images/infographic/democracy-00.svg';
+import democracy01 from '@assets/images/infographic/democracy-01.svg';
+import emissions00 from '@assets/images/infographic/emissions-00.svg';
+import emissions01 from '@assets/images/infographic/emissions-01.svg';
+import labour00 from '@assets/images/infographic/labour-00.svg';
+import labour01 from '@assets/images/infographic/labour-01.svg';
 import finalConsumer00 from '@assets/images/infographic/final-consumer-00.svg';
 import finalConsumer01 from '@assets/images/infographic/final-consumer-01.svg';
+import scale00 from '@assets/images/infographic/scale-00.svg';
 import TextHero from '@components/TextHero.astro';
 import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
 ---
 
-<Layout title="informe escorxadors IDRA" classesHeader="bg-yellow-100">
-  <TextHero fullHeightCenter={false} classes="bg-yellow-100">
+<Layout title="informe escorxadors IDRA" classesHeader="bg-amber-100">
+  <TextHero fullHeightCenter={false} classes="bg-amber-100">
     <div
       slot="content1"
       class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
@@ -45,8 +56,8 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
       <div class="flex lg:gap-8 justify-center mt-8">
-        <Image src={brasil} alt="" />
-        <Image src={eeuu} alt="" />
+        <Image src={origin00} alt="" />
+        <Image src={origin01} alt="" />
       </div>
     </div>
     <div slot="content2" class="md:text-xl">
@@ -56,7 +67,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ramaders i agricultors.
         </li>
       </ul>
-      <Image src={image1920x1080} alt="" class="mt-8" />
+      <Image src={origin02} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -80,8 +91,8 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           Sagrià i Osona amb el Port de Barcelona i Europa.
         </li>
       </ul>
-      <div class="">
-        <Image src={infrastructures} alt="" class="md:-mt-20" />
+      <div>
+        <Image src={infrastructures00} alt="" class="md:-mt-20" />
       </div>
     </div>
     <div slot="content2" class="md:text-xl">
@@ -92,7 +103,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ><br />Molí de gra<br />Petites finques<br />Escorxador municipal
         </li>
       </ul>
-      <Image src={image1920x1080} alt="" class="mt-8" />
+      <Image src={infrastructures01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -105,7 +116,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       </ul>
       <div>
         <p class="text-8xl font-bold mb-4">23 millons</p>
-        <Image src={industrialPigs} alt="" class="mb-4" />
+        <Image src={slaughter00} alt="" class="mb-4" />
       </div>
       <div>
         <p>
@@ -119,7 +130,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <li class="mb-4"><strong>A l’Escorxador de l’Armentera</strong></li>
       </ul>
       <div class="flex items-start gap-4">
-        <Image src={ecologicPig} alt="" class="" />
+        <Image src={slaughter01} alt="" class="" />
         <div>
           <p class="text-8xl font-bold mb-4 text-green-500">3.500</p>
           <p>
@@ -136,10 +147,12 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       <ul class="list-disc">
         <li>
           <strong>Milers de porcs en un espai reduït i interior</strong><br
-          />Els animals són transportats centenars de quilòmetres fins a
-          l’escorxador.
+          />Els animals són transportats <strong
+            >centenars de quilòmetres</strong
+          > fins a l’escorxador.
         </li>
       </ul>
+      <Image src={animalCare00} alt="" class="mt-8" />
     </div>
     <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
@@ -147,10 +160,11 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong
             >Desenes o pocs centenars de porcs en un espai ampli amb
             possibilitat de sortir a l’exterior</strong
-          >.<br />Els animals són transportats pocs quilòmetres fins a
-          l’escorxador.
+          >.<br />Els animals són transportats <strong>pocs quilòmetres</strong> fins
+          a l’escorxador.
         </li>
       </ul>
+      <Image src={animalCare01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -178,6 +192,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       <ul class="list-disc">
         <li><strong>Pateix estrès hídric</strong>.</li>
       </ul>
+      <Image src={water02} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -191,7 +206,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
       <div class="flex justify-start gap-4 mt-8">
-        <Image src={slurry} alt="" />
+        <Image src={slurry00} alt="" />
         <p>
           <strong>40%</strong><br />del territori català <strong
             >està contaminat</strong
@@ -207,6 +222,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           >.
         </li>
       </ul>
+      <Image src={slurry01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -216,10 +232,11 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         <li><strong>Emissions d’efecte hivernacle</strong>.</li>
       </ul>
       <div class="flex justify-start gap-4 mt-8">
-        <Image src={emissions} alt="" />
+        <Image src={emissions00} alt="" />
         <p>
-          <strong>21%</strong><br />La indústria porcina catalana n’és
-          responsable
+          <strong>21%</strong><br />La <strong
+            >indústria porcina catalana</strong
+          > n’és responsable
         </p>
       </div>
     </div>
@@ -229,6 +246,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong>Genera menys carboni i captura part del que genera</strong>.
         </li>
       </ul>
+      <Image src={emissions01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -257,10 +275,19 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
     </div>
     <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
-        <li>
-          <strong>Genera menys carboni i captura part del que genera</strong>.
+        <li class="mb-4">
+          <strong
+            >Sosté una diversitat de petits actors arrelats al territori</strong
+          ><br />A Llavora, els ramaders cobren 445€ més per porc que si
+          treballessin amb el mercat majorista.
         </li>
       </ul>
+      <div class="flex items-start gap-4">
+        <Image src={slaughter01} alt="" class="" />
+        <div>
+          <p class="text-8xl font-bold mb-4 text-green-500">+ 445€</p>
+        </div>
+      </div>
     </div>
   </ScreenSplitTwo>
 
@@ -297,15 +324,17 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           <strong>despoblació rural</strong>.
         </li>
       </ul>
+      <Image src={labour00} alt="" class="mt-8" />
     </div>
     <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
         <li>
           <strong>Ocupació de qualitat vinculada al territori</strong>.<br />A
-          Llavora es creen 10 vegades més llocs de treball per porc que en una
-          finca intensiva de les mateixes dimensions.
+          Llavora es creen <strong>10 vegades més llocs de treball</strong> per porc
+          que en una finca intensiva de les mateixes dimensions.
         </li>
       </ul>
+      <Image src={labour01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -314,7 +343,9 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       <ul class="list-disc">
         <li>
           <strong>Carn de baixa qualitat</strong>.<br />S’exporta
-          majoritàriament a la Xina, França i Japó.
+          majoritàriament a la <strong>Xina</strong>, <strong>França</strong> i <strong
+            >Japó</strong
+          >.
         </li>
       </ul>
       <Image src={finalConsumer00} alt="" class="mt-8" />
@@ -327,7 +358,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           >: carnissers artesanals, petit comerç i consumidors locals.
         </li>
       </ul>
-      <Image src={finalConsumer01} alt="" class="mt-8 mx-auto" />
+      <Image src={finalConsumer01} alt="" class="mt-8" />
     </div>
   </ScreenSplitTwo>
 
@@ -335,9 +366,11 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
     <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
         <li>
-          <strong>De l’inici al final de la cadena</strong>.<br />+20.000 km2.
+          <strong>De l’inici al final de la cadena</strong>.
         </li>
       </ul>
+      <p class="text-3xl font-bold mt-4">+20.000 km.</p>
+      <Image src={scale00} alt="" class="mt-8" />
     </div>
     <div slot="content2" class="md:text-xl">
       <ul class="list-disc">
@@ -347,6 +380,10 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           > en un radi de 5 km i <strong>distribució</strong> en un màxim de 150 km.
         </li>
       </ul>
+      <div class="mt-4">
+        <Icon name="arrow-right" class="text-xs text-green-500" />
+        <p class="text-3xl font-bold">155 km.</p>
+      </div>
     </div>
   </ScreenSplitTwo>
 </Layout>
