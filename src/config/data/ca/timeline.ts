@@ -1,9 +1,12 @@
-import exampleImage from '@assets/images/1920x1080.jpg';
-import ecologicPig from '@assets/images/infographic/ecologic-pig.svg';
+import origenComunal from '@assets/images/origen-comunal.png';
+import rupturaNeoliberal from '@assets/images/ruptura-neoliberal.png';
+import serveiPublicMunicipal from '@assets/images/servei-public-municipal.png';
+import privatitzacioDeclive from '@assets/images/privatitzacio-declive.png';
+import publicComunitari from '@assets/images/public-comunitari.png';
 
 const dataTimelineCa = [
   {
-    image: ecologicPig,
+    image: origenComunal,
     altImage: '',
     title: 'Origen comunal',
     time: 'Edat Mitjana (S. XIII - XVIII)',
@@ -17,7 +20,7 @@ const dataTimelineCa = [
       'Carta de Població de Figueres (1267) — el macèl·lum com a bé comunal',
   },
   {
-    image: exampleImage,
+    image: rupturaNeoliberal,
     altImage: '',
     title: 'La ruptura liberal amb la desamortització',
     time: '1855 - 1890',
@@ -32,7 +35,7 @@ const dataTimelineCa = [
       'La Llei de Madoz (1855) destrueix la propietat comunal posant en venda els béns i terres municipals que eren comunals',
   },
   {
-    image: exampleImage,
+    image: serveiPublicMunicipal,
     altImage: '',
     title: 'Servei públic municipal',
     time: '1890',
@@ -46,7 +49,7 @@ const dataTimelineCa = [
       'Llei de Bases de Règim Local (1945) assumeix la competència dels escorxadors com a pròpia dels ajuntaments',
   },
   {
-    image: exampleImage,
+    image: privatitzacioDeclive,
     altImage: '',
     title: 'Privatització i declivi',
     time: '1996 - 2022',
@@ -60,7 +63,7 @@ const dataTimelineCa = [
       'El Reial Decret-Llei 7/1996 i la Llei Montoro (2013) posen fi a l’obligatorietat del servei de l’equipament escorxador com a servei públic',
   },
   {
-    image: exampleImage,
+    image: publicComunitari,
     altImage: '',
     title: 'Cap a un model públic-comunitari',
     time: '2022 - futur',
