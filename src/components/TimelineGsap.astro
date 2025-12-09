@@ -5,9 +5,9 @@ const periods = Astro.props.periods;
 ---
 
 <div class="container mx-auto px-4 md:px-8">
-  <div class="timeline">
+  <div class="timeline relative">
     <div
-      class="timeline-line bg-linear-to-bl from-green-500 to-green-400 w-0.5"
+      class="hidden timeline-line bg-linear-to-bl from-green-500 to-green-500 w-0.5 md:block md:absolute md:h-full md:w-1"
     >
     </div>
 
@@ -15,7 +15,7 @@ const periods = Astro.props.periods;
       periods.map((period: any) => {
         return (
           <div class="timeline-item mb-12 grid grid-cols-1 md:gap-16 md:grid-cols-2">
-            <div class="self-center justify-self-center">
+            <div class="self-center justify-self-center mb-8 md:mb-0">
               <Image
                 src={period.image}
                 alt={period.altImage}
@@ -152,16 +152,11 @@ const periods = Astro.props.periods;
 </script>
 
 <style>
-  .timeline {
-    position: relative;
-  }
-
   .timeline-line {
-    position: absolute;
     left: 50%;
     top: 0;
-    width: 4px;
-    height: 100%;
+    /* width: 4px; */
+    /* height: 100%; */
     transform: scaleY(0);
     transform-origin: top;
   }

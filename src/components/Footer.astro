@@ -1,13 +1,18 @@
 ---
-
+import { Icon } from 'astro-icon/components';
 ---
 
 <div class="bg-yellow-500 py-14">
   <div class="container mx-auto px-4 md:px-8">
     <div class="grid gap-10 md:grid-cols-2 md:gap-8 text-sm">
-      <p>A report about …</p>
-      <p class="md:justify-self-end">
-        © 2025 <a href="https://idrabcn.com">IDRA</a>
+      <p class="flex items-center gap-2">
+        <Icon name="download" class="text-xs text-black" />
+        Descàrrega l'informe en PDF
+      </p>
+      <p class="flex items-center gap-2 md:justify-self-end">
+        © 2025 <a href="https://idrabcn.com" class="flex items-center gap-2"
+          >IDRA <Icon name="external-link" class="text-xs text-black" />
+        </a>
       </p>
     </div>
   </div>
