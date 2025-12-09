@@ -25,22 +25,30 @@ const { fullHeightCenter = false, classes } = Astro.props;
 </div>
 
 <script>
-  import { gsap, fadeIn } from '@lib/gsap';
+  import { gsap, fadeIn, ScrollTrigger } from '@lib/gsap';
 
-  const heroSections = document.querySelectorAll('.hero-section');
+  function initTextHero() {
+    const heroSections = document.querySelectorAll('.hero-section');
 
-  heroSections.forEach(section => {
-    const element1 = section.querySelector('.m-a-from-bottom-1');
-    const element2 = section.querySelector('.m-a-from-bottom-2');
+    heroSections.forEach(section => {
+      const element1 = section.querySelector('.m-a-from-bottom-1');
+      const element2 = section.querySelector('.m-a-from-bottom-2');
 
-    const tlHero = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        toggleActions: 'play none none reverse',
-        start: 'top 30%',
-      },
+      const tlHero = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          toggleActions: 'play none none reverse',
+          start: 'top 30%',
+        },
+      });
+
+      tlHero.add(fadeIn(element1)).add(fadeIn(element2));
     });
+  }
 
-    tlHero.add(fadeIn(element1)).add(fadeIn(element2));
+  document.addEventListener('astro:page-load', initTextHero);
+
+  document.addEventListener('astro:before-preparation', () => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
   });
 </script>

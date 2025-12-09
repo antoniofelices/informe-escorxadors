@@ -7,35 +7,68 @@ import {
 const lang = getLangFromUrl(Astro.url);
 const translateString = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+
+const currentPath = Astro.url.pathname;
+const isCurrentPage = (path: string) => {
+  const translatedPath = translatePath(path);
+  if (path === '/') {
+    return currentPath === translatedPath;
+  }
+  return (
+    currentPath === translatedPath || currentPath.startsWith(translatedPath)
+  );
+};
 ---
 
 <nav
-  class="fixed lg:static top-0 left-0 right-0 h-4/6 lg:h-auto lg:w-auto bg-yellow-400 lg:bg-transparent z-10 lg:z-auto lg:mx-2"
+  aria-label={translateString('mainNavigation') || 'Main navigation'}
+  class="fixed lg:static top-0 left-0 right-0 h-4/6 lg:h-auto lg:w-auto bg-yellow-400 lg:bg-transparent z-10 lg:z-auto"
 >
   <div class="grid lg:static place-items-center h-full lg:h-auto">
     <ul
-      class="flex gap-x-2 flex-col text-4xl mx-8 md:flex-row md:mx-0 lg:text-xs 2xl:text-sm"
+      class="flex gap-x-6 flex-col text-4xl mx-8 md:flex-row md:mx-0 lg:text-xs 2xl:text-sm"
     >
-      <li class="lg:mr-2">
-        <a href={translatePath('/')}>
+      <li>
+        <a
+          href={translatePath('/')}
+          aria-current={isCurrentPage('/') ? 'page' : undefined}
+        >
           {translateString('navHome')}
         </a>
       </li>
-      <li class="lg:mx-2">
-        <a href={translatePath('/cronologia/')}>
+      <li>
+        <a
+          href={translatePath('/cronologia/')}
+          aria-current={isCurrentPage('/cronologia/') ? 'page' : undefined}
+        >
           {translateString('navTimeline')}
         </a>
       </li>
-      <li class="lg:mx-2">
-        <a href={translatePath('/comparativa/')}>
+      <li>
+        <a
+          href={translatePath('/comparativa/')}
+          aria-current={isCurrentPage('/comparativa/') ? 'page' : undefined}
+        >
           {translateString('navComparative')}
         </a>
       </li>
-      <li class="lg:mx-2">
-        <a href={translatePath('/escorxador-armentera/')}>
+      <li>
+        <a
+          href={translatePath('/escorxador-armentera/')}
+          aria-current={isCurrentPage('/escorxador-armentera/')
+            ? 'page'
+            : undefined}
+        >
           {translateString('navMaps')}
         </a>
       </li>
     </ul>
   </div>
 </nav>
+
+<style>
+  a[aria-current='page'] {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.5rem;
+  }
+</style>
