@@ -46,6 +46,22 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
     </div>
   </TextHero>
 
+  <ScreenSplitTwo>
+    <div slot="content1" class="text-center">
+      <h2 class="font-bold mb-4 md:text-5xl">Porc industrial</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producció intensiva i industrial destinada als mercats internacionals.
+      </p>
+    </div>
+    <div slot="content2" class="text-center">
+      <h2 class="font-bold mb-4 md:text-5xl">Porc ecològic</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producció extensiva i/o ecològica destinada a l’economia i consum de
+        proximitat.
+      </p>
+    </div>
+  </ScreenSplitTwo>
+
   <ScreenSplitTwo title="Origen de l'alimentació">
     <div slot="content1" class="md:text-xl">
       <ul class="list-disc">
@@ -67,7 +83,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ramaders i agricultors.
         </li>
       </ul>
-      <Image src={origin02} alt="" class="mt-8" />
+      <Image src={origin02} alt="" class="mt-12" />
     </div>
   </ScreenSplitTwo>
 
@@ -92,7 +108,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
         </li>
       </ul>
       <div>
-        <Image src={infrastructures00} alt="" class="md:-mt-20" />
+        <Image src={infrastructures00} alt="" />
       </div>
     </div>
     <div slot="content2" class="md:text-xl">
@@ -103,7 +119,7 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
           ><br />Molí de gra<br />Petites finques<br />Escorxador municipal
         </li>
       </ul>
-      <Image src={infrastructures01} alt="" class="mt-8" />
+      <Image src={infrastructures01} alt="" class="mt-12" />
     </div>
   </ScreenSplitTwo>
 
