@@ -31,12 +31,15 @@ const periods = Astro.props.periods;
               </p>
               <h2 class="font-bold mt-3 mb-3 lg:text-4xl">{period.title}</h2>
 
+              <div class="description">
+                <p class="mb-4 text-l">{period.text2}.</p>
+              </div>
+
               <div class="model pb-3">
                 <h3 class="uppercase text-xs font-bold">
                   {period.description1}
                 </h3>
                 <p class="mb-4 text-l">{period.text1}.</p>
-                <p class="mb-4 text-l">{period.text2}.</p>
               </div>
 
               <div class="example pb-3">

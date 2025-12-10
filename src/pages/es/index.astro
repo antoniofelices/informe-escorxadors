@@ -1,43 +1,139 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
-import TextHero from '@components/TextHero.astro';
-import {
-  getLangFromUrl,
-  useTranslations,
-  useTranslatedPath,
-} from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const translateString = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout title="informe escorxadors IDRA" includeFooter={false} mainMenu={false}>
-  <TextHero fullHeightCenter={false}>
-    <div slot="content1" class="container mx-auto p-4 md:px-8 h-dvh">
-      <div class="h-1/2">
-        <h1 class="text-4xl lg:text-12xl font-bold mb-4">
-          ES Informe Escorxadors
+<Layout
+  title="Infraestructures per a l’alimentació sostenible IDRA"
+  description="Un estudi sobre el model públic-comunitari de l’Escorxador de l’Armentera i la producció porcina ecològica, elaborat per l’IDRA 2025"
+  includeFooter={false}
+  includeHeader={false}
+>
+  <main class="container mx-auto px-4 md:px-8">
+    <div
+      class="grid gap-8 grid-rows-[3rem_30vh_1fr] md:grid-rows-[3rem_45vh_1fr] md:h-dvh"
+    >
+      <nav
+        id="lang-menu"
+        class="uppercase text-xs py-4"
+        aria-label="Language selector"
+      >
+        <a href="/" class="mr-4" aria-label="català">ca</a>
+        <a href="/es/" aria-label="castellano">es</a>
+      </nav>
+
+      <div class="self-end mb-2 md:mb-12 m-a-from-bottom-1">
+        <h1
+          class="text-5xl font-bold mb-6 md:text-9xl lg:text-11xl 2xl:text-18xl"
+        >
+          Infraestructures per a l’alimentació sostenible.
         </h1>
-        <p>
-          ES I will need all the texts in Spanish. By all, I mean all. Some text
-          explaining what can be found here… lorem ipsum
+        <p class="max-w-2xl 2xl:text-xl">
+          Un estudi sobre el model públic-comunitari de l’Escorxador de
+          l’Armentera i la producció porcina ecològica, elaborat per <a
+            href="https://idrabcn.com"
+            class="border-b border-b-black border-solid pb-1">l’IDRA</a
+          >
+          (2025).
         </p>
       </div>
-      <div class="grid lg:grid-cols-3">
-        <a href={translatePath('/cronologia/')} class="block">
-          <span>{translateString('navTimeline')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+
+      <div class="grid gap-8 md:grid-cols-3 m-a-from-bottom-2">
+        <a
+          href="/cronologia/"
+          class="bg-rose-100 p-4"
+          aria-label="Cronologia: Els escorxadors municipals. Breu història d'una infraestructura clau."
+        >
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">Cronologia</h2>
+              <p class="text-sm">Breu història dels escorxadors municipals.</p>
+            </div>
+
+            <Icon
+              name="arrow-right"
+              class="text-xs text-black mt-6 md:mt-0"
+              aria-hidden="true"
+            />
+          </div>
         </a>
-        <a href={translatePath('/comparativa/')} class="block">
-          <span>{translateString('navComparative')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        <a
+          href="/comparativa/"
+          class="bg-amber-100 p-4"
+          aria-label="Comparativa: Implicacions econòmiques i ecològiques de dos models oposats"
+        >
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">Comparativa</h2>
+              <p class="text-sm">
+                Porc industrial - Porc ecològic. Dos models oposats.
+              </p>
+            </div>
+            <Icon
+              name="arrow-right"
+              class="text-xs text-black mt-6 md:mt-0"
+              aria-hidden="true"
+            />
+          </div>
         </a>
-        <a href={translatePath('/mapes/')} class="block">
-          <span>{translateString('navMaps')}</span>
-          <Icon name="arrow-right" class="text-3xl text-orange-500" />
+        <a
+          href="/escorxador-armentera/"
+          class="bg-sky-100 p-4"
+          aria-label="L'escorxador de l'Armentera: Un model de col·laboració público-comunitaria"
+        >
+          <div
+            class="h-full flex flex-col justify-between border-l border-l-black pl-4"
+          >
+            <div>
+              <h2 class="font-bold mb-4 md:text-2xl">
+                L'escorxador de l'Armentera.
+              </h2>
+              <p class="text-sm">
+                Circuits curts de comercialització alimentària i diagrama de
+                fluxos.
+              </p>
+            </div>
+            <Icon
+              name="arrow-right"
+              class="text-xs text-black mt-6 md:mt-0"
+              aria-hidden="true"
+            />
+          </div>
         </a>
       </div>
     </div>
-  </TextHero>
+  </main>
 </Layout>
+
+<script>
+  import { gsap, fadeIn, ScrollTrigger } from '@lib/gsap';
+
+  function initHomepage() {
+    const heroSections = document.querySelectorAll('.container');
+
+    heroSections.forEach(section => {
+      const element1 = section.querySelector('.m-a-from-bottom-1');
+      const element2 = section.querySelector('.m-a-from-bottom-2');
+
+      const tlHero = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          toggleActions: 'play none none reverse',
+          start: 'top 30%',
+        },
+      });
+
+      tlHero.add(fadeIn(element1)).add(fadeIn(element2));
+    });
+  }
+
+  document.addEventListener('astro:page-load', initHomepage);
+
+  document.addEventListener('astro:before-preparation', () => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  });
+</script>

@@ -71,10 +71,10 @@ const dataTimelineCa = [
     text1: 'Governança democràtica i economia social',
     description2: 'Descripció',
     text2:
-      'L’escorxador és una infraestructura de sobirania pel repte de la transició ecosocial. Reconeixement del dret a les infraestructures com a clau de la sobirania alimentària',
+      'Un escorxador de propietat pública gestionat mitjançant un model de governança col·lectiva que involucra els diferents agents de la cadena agroalimentària local',
     description3: 'Exemple històric il·lustratiu',
     text3:
-      'Emergència d’escorxadors públic-comunitaris com l’Escorxador de l’Armentera',
+      'Sorgiment d’escorxadors públic-comunitaris com l’Escorxador de l’Armentera',
   },
 ];
 
