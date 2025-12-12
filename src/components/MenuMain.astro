@@ -38,24 +38,24 @@ const isCurrentPage = (path: string) => {
       </li>
       <li>
         <a
-          href={translatePath('/timeline')}
-          aria-current={isCurrentPage('/cronologia/') ? 'page' : undefined}
+          href={translatePath('timeline')}
+          aria-current={isCurrentPage('timeline') ? 'page' : undefined}
         >
           {translateString('navTimeline')}
         </a>
       </li>
       <li>
         <a
-          href={translatePath('/comparative')}
-          aria-current={isCurrentPage('/comparativa/') ? 'page' : undefined}
+          href={translatePath('comparative')}
+          aria-current={isCurrentPage('comparative') ? 'page' : undefined}
         >
           {translateString('navComparative')}
         </a>
       </li>
       <li>
         <a
-          href={translatePath('/escorxadorArmentera')}
-          aria-current={isCurrentPage('/escorxador-armentera/')
+          href={translatePath('escorxadorArmentera')}
+          aria-current={isCurrentPage('escorxadorArmentera')
             ? 'page'
             : undefined}
         >
@@ -69,6 +69,6 @@ const isCurrentPage = (path: string) => {
 <style>
   a[aria-current='page'] {
     border-bottom: 1px solid currentColor;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.15rem;
   }
 </style>
