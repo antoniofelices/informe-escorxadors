@@ -1,19 +1,16 @@
-type CaProps = {
-  timeline: string;
-  comparative: string;
-  escorxadorArmentera: string;
-};
-
-type EsProps = {
+type RouteTranslations = {
   timeline: string;
   comparative: string;
   escorxadorArmentera: string;
 };
 
 type RoutesProps = {
-  ca: CaProps;
-  es: EsProps;
+  ca: RouteTranslations;
+  es: RouteTranslations;
 };
+export type Lang = keyof typeof languages;
+
+export type RouteKey = keyof RouteTranslations;
 
 export const languages = {
   ca: 'Catala',
