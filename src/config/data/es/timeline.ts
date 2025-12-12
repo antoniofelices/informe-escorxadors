@@ -50,9 +50,9 @@ const dataTimelineEs = [
   },
   {
     image: privatitzacioDeclive,
-    altImage: '1996 - 2022',
+    altImage: '',
     title: 'Privatización y declive',
-    time: '',
+    time: '1996 - 2022',
     description1: 'Modelo económico',
     text1: 'Oligopolio privado y dependencia logística',
     description2: 'Descripción',
@@ -64,9 +64,9 @@ const dataTimelineEs = [
   },
   {
     image: publicComunitari,
-    altImage: '2022 - Futuro',
+    altImage: '',
     title: 'Hacia un modelo público-comunitario',
-    time: '',
+    time: '2022 - Futuro',
     description1: 'Modelo económico',
     text1: 'Gobernanza democrática y economía social',
     description2: 'Descripción',

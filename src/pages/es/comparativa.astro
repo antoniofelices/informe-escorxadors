@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-
 import origin00 from '@assets/images/infographic/origin-00.svg';
 import origin01 from '@assets/images/infographic/origin-01.svg';
 import origin02 from '@assets/images/infographic/origin-02.svg';
@@ -13,7 +12,6 @@ import slaughter01 from '@assets/images/infographic/slaughter-01.svg';
 import animalCare00 from '@assets/images/infographic/animal-care-00.svg';
 import animalCare01 from '@assets/images/infographic/animal-care-01.svg';
 import water00 from '@assets/images/infographic/water-00.svg';
-import water01 from '@assets/images/infographic/water-01.svg';
 import water02 from '@assets/images/infographic/water-02.svg';
 import slurry00 from '@assets/images/infographic/slurry-00.svg';
 import slurry01 from '@assets/images/infographic/slurry-01.svg';
@@ -54,14 +52,14 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
   <ScreenSplitTwo>
     <div slot="content1" class="text-center">
       <h2 class="font-bold mb-4 md:text-2xl lg:text-5xl">Porcino industrial</h2>
-      <p class="max-w-xs m-auto md:text-xl">
+      <p class="max-w-xs m-auto md:text-xl leading-[1.3]">
         Producción intensiva e industrial destinada a los mercados
         internacionales.
       </p>
     </div>
     <div slot="content2" class="text-center">
       <h2 class="font-bold mb-4 md:text-2xl lg:text-5xl">Porcino ecológico</h2>
-      <p class="max-w-xs m-auto md:text-xl">
+      <p class="max-w-xs m-auto md:text-xl leading-[1.3]">
         Producción extensiva y/o ecológica destinada a la economía y consumo de
         proximidad.
       </p>
@@ -200,13 +198,27 @@ import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
       </ul>
       <div class="flex justify-center gap-8 mt-8">
         <div class="px-4 md:px-8">
-          <Image src={water00} alt="" />
+          <div class="grid place-items-center">
+            <p
+              class="text-xs text-center font-bold uppercase col-start-1 row-start-1 z-10 mt-4 leading-[1.3]"
+            >
+              1<br />año
+            </p>
+            <Image src={water00} alt="" class="col-start-1 row-start-1" />
+          </div>
           <p class="mt-4 uppercase text-center text-xs">
             Industria catalana del cerdo
           </p>
         </div>
         <div class="px-4 md:px-8">
-          <Image src={water01} alt="" />
+          <div class="grid place-items-center">
+            <p
+              class="text-xs text-center font-bold uppercase col-start-1 row-start-1 z-10 mt-4 leading-[1.3]"
+            >
+              55<br />años
+            </p>
+            <Image src={water00} alt="" class="col-start-1 row-start-1" />
+          </div>
           <p class="mt-4 uppercase text-center text-xs">
             todos las hogares de Cataluña
           </p>
