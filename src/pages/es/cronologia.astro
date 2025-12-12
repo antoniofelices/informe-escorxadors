@@ -1,0 +1,27 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TimelineGsap from '@components/TimelineGsap.astro';
+import dataTimelineCa from '@data/ca/timeline';
+import TextHero from '@components/TextHero.astro';
+---
+
+<Layout
+  title="Cronología estudio sobre el modelo público-comunitario de los mataderos y de la producción porcina ecológica"
+  description="Breve historia de los mataderos municipales"
+  classesHeader="bg-rose-100"
+>
+  <TextHero fullHeightCenter={false} classes="bg-rose-100 mb-16">
+    <div
+      slot="content1"
+      class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
+    >
+      <h1 class="text-4xl lg:text-8xl font-bold mb-6">
+        Los mataderos municipales
+      </h1>
+      <p class="mb-4 max-w-2xl mx-auto">
+        Breve historia de una infraestructura clave.
+      </p>
+    </div>
+  </TextHero>
+  <TimelineGsap periods={dataTimelineCa} />
+</Layout>

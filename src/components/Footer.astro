@@ -1,5 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const translateString = useTranslations(lang);
 ---
 
 <div class="bg-yellow-500 py-14">
@@ -7,7 +10,7 @@ import { Icon } from 'astro-icon/components';
     <div class="grid gap-10 md:grid-cols-2 md:gap-8 text-xs">
       <p class="flex items-center gap-2">
         <Icon name="download" class="text-xs text-black" />
-        Descàrrega l'informe en PDF
+        {translateString('downloadPDF')}
       </p>
       <p class="flex items-center gap-2 md:justify-self-end">
         © 2025 <a href="https://idrabcn.com" class="flex items-center gap-2"

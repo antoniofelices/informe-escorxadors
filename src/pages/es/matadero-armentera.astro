@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Layout from '@layouts/Layout.astro';
+import TextHero from '@components/TextHero.astro';
+import ImageText from '@components/ImageText.astro';
+import mapOviGermansColl from '@assets/images/map-ovi-germans-coll.svg';
+import mapPorciLlavora from '@assets/images/map-porci-llavora.svg';
+import mapBoviMudaVedella from '@assets/images/map-bovi-muda-vedella.svg';
+import mapCarnissersAmbBestiaPropi from '@assets/images/map-carnissers-amb-bestia-propi.svg';
+import diagram from '@assets/images/diagram.svg';
+---
+
+<Layout
+  title="El matadero de l'Armentera"
+  description="Un estudio sobre el modelo público-comunitario del Matadero de l'Armentera y de la producción porcina ecológica"
+  classesHeader="bg-sky-100"
+>
+  <TextHero fullHeightCenter={false} classes="bg-sky-100 mb-10">
+    <div
+      slot="content1"
+      class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
+    >
+      <h1 class="text-4xl lg:text-8xl font-bold mb-6">
+        El matadero de l'Armentera
+      </h1>
+      <p class="mb-4 max-w-2xl mx-auto">
+        Circuitos cortos de comercialización alimentaria y diagrama de flujos..
+      </p>
+    </div>
+  </TextHero>
+
+  <div>
+    <ul class="flex gap-4 items-center justify-center pb-10 text-xs font-bold">
+      <li class="flex gap-1 items-center">
+        <Icon name="circle" class="text-blue-500" />Producción
+      </li>
+      <li class="flex gap-1 items-center">
+        <Icon name="circle" class="text-red-500" />Transformación
+      </li>
+      <li class="flex gap-1 items-center">
+        <Icon name="circle" class="text-green-500" />Consumo final
+      </li>
+    </ul>
+  </div>
+
+  <ImageText imageUrl={mapOviGermansColl}>
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl lg:text-5xl font-bold mb-4">
+            Hermanos Coll Producción ovina ecológica
+          </h2>
+          <p>
+            El paso por el Matadero y la venta al por menor permite a los
+            Hermanos Coll ingresar un <strong>51% más por cordero</strong> que si
+            vendieran el animal vivo.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>47 minutos</strong></li>
+            <li>40,2 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={mapPorciLlavora} classes="pt-12 md:pt-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl lg:text-5xl font-bold mb-4">
+            Llavora Producción porcina ecológica
+          </h2>
+          <p>
+            El paso por el Matadero y la venta al por menor permite a Llavora
+            ingresar un <strong>223% más por cerdo</strong> que si vendiera el animal
+            vivo.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>1h 42 minutos</strong></li>
+            <li>140 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={mapBoviMudaVedella} classes="pt-12 md:pt-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl lg:text-5xl font-bold mb-4">
+            MuDA Producción de ternera ecológica
+          </h2>
+          <p>
+            El paso por el Matadero y la venta al por menor permite a MuDA
+            ingresar <strong>un 152% más por ternera</strong> que si vendiera el animal
+            vivo.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>1h 19 minutos</strong></li>
+            <li>80 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <ImageText imageUrl={mapCarnissersAmbBestiaPropi} classes="pt-12 md:py-24">
+    <div slot="text" class="max-w-lg h-full">
+      <div class="flex flex-col gap-4 h-full justify-between">
+        <div>
+          <h2 class="text-2xl lg:text-5xl font-bold mb-4">
+            Miquel Roca y Albert Sart Carniceros con ganado propio
+          </h2>
+          <p>
+            El 100% del valor añadido desde el engorde hasta el consumo final se
+            produce a 20 km de l'Armentera. Los carniceros se diferencian
+            mediante un producto propio artesano que los consumidores reconocen
+            como de alta calidad.
+          </p>
+        </div>
+        <div>
+          <ul class="border-l-4 border-l-black pl-2">
+            <li><strong>47 minutos</strong></li>
+            <li>40,2 Km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ImageText>
+  <div class="container mx-auto p-4 md:px-8 md:py-24">
+    <Image src={diagram} alt="" />
+  </div>
+</Layout>
