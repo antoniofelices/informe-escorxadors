@@ -1,0 +1,467 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+import origin00 from '@assets/images/infographic/origin-00.svg';
+import origin01 from '@assets/images/infographic/origin-01.svg';
+import origin02 from '@assets/images/infographic/origin-02.svg';
+import infrastructures00 from '@assets/images/infographic/infrastructures-00.svg';
+import infrastructures01 from '@assets/images/infographic/infrastructures-01.svg';
+import slaughter00 from '@assets/images/infographic/slaughter-00.svg';
+import slaughter01 from '@assets/images/infographic/slaughter-01.svg';
+import animalCare00 from '@assets/images/infographic/animal-care-00.svg';
+import animalCare01 from '@assets/images/infographic/animal-care-01.svg';
+import water00 from '@assets/images/infographic/water-00.svg';
+import water01 from '@assets/images/infographic/water-01.svg';
+import water02 from '@assets/images/infographic/water-02.svg';
+import slurry00 from '@assets/images/infographic/slurry-00.svg';
+import slurry01 from '@assets/images/infographic/slurry-01.svg';
+import democracy00 from '@assets/images/infographic/democracy-00.svg';
+import democracy01 from '@assets/images/infographic/democracy-01.svg';
+import emissions00 from '@assets/images/infographic/emissions-00.svg';
+import emissions01 from '@assets/images/infographic/emissions-01.svg';
+import labour00 from '@assets/images/infographic/labour-00.svg';
+import labour01 from '@assets/images/infographic/labour-01.svg';
+import finalConsumer00 from '@assets/images/infographic/final-consumer-00.svg';
+import finalConsumer01 from '@assets/images/infographic/final-consumer-01.svg';
+import scale00 from '@assets/images/infographic/scale-00.svg';
+import TextHero from '@components/TextHero.astro';
+import ScreenSplitTwo from '@components/ScreenSplitTwo.astro';
+---
+
+<Layout
+  title="Comparativa estudio sobre el modelo público-comunitario de los mataderos y de la producción porcina ecológica"
+  description="Cerdo industrial - Cerdo ecológico. Dos modelos opuestos"
+  classesHeader="bg-amber-100"
+>
+  <TextHero fullHeightCenter={false} classes="bg-amber-100">
+    <div
+      slot="content1"
+      class="container text-center mx-auto p-4 md:px-28 md:py-16 lg:px-36"
+    >
+      <h1 class="text-4xl lg:text-8xl font-bold mb-6">
+        Implicaciones económicas y ecológicas de dos modelos opuestos
+      </h1>
+      <p class="mb-4 max-w-2xl mx-auto">
+        Un recorrido por los 12 puntos clave que diferencian el modelo
+        industrial porcino y la producción extensiva y/o ecológica de la finca
+        Llavora y el Matadero de l'Armentera.
+      </p>
+    </div>
+  </TextHero>
+
+  <ScreenSplitTwo>
+    <div slot="content1" class="text-center">
+      <h2 class="font-bold mb-4 md:text-2xl lg:text-5xl">Porcino industrial</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producción intensiva e industrial destinada a los mercados
+        internacionales.
+      </p>
+    </div>
+    <div slot="content2" class="text-center">
+      <h2 class="font-bold mb-4 md:text-2xl lg:text-5xl">Porcino ecológico</h2>
+      <p class="max-w-xs m-auto md:text-xl">
+        Producción extensiva y/o ecológica destinada a la economía y consumo de
+        proximidad.
+      </p>
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Origen de la alimentación">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Soja transgénica</strong>.<br />Genera <strong
+            >deforestación</strong
+          > y vulneraciones de los Derechos Humanos.<sup>2</sup>
+        </li>
+      </ul>
+      <div class="flex lg:gap-8 justify-center mt-8">
+        <Image src={origin00} alt="" />
+        <Image src={origin01} alt="" />
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Cultivos locales</strong>.<br />Existe un vínculo directo
+          entre ganaderos y agricultores.
+        </li>
+      </ul>
+      <Image src={origin02} alt="" class="mt-12" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Infraestructuras">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4">
+          <strong>Bunge y Elian</strong>.<br />Procesan la soja que entra por el
+          Puerto de Barcelona.
+        </li>
+        <li class="mb-4">
+          <strong>Vall Companys y BonÀrea</strong>.<br />Fabrican el pienso.
+        </li>
+        <li class="mb-4">
+          <strong>Mercabarna</strong>.<br />Comercializa cada año <strong
+            >35.000 toneladas de carne</strong
+          >.
+        </li>
+        <li class="mb-4">
+          <strong>Eje transversal o eje de los cerdos</strong>.<br />Conecta el
+          Segrià y Osona con el Puerto de Barcelona y Europa.
+        </li>
+      </ul>
+      <div>
+        <Image src={infrastructures00} alt="" />
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Pequeña industria e infraestructuras arraigadas al territorio</strong
+          ><br />Molino de grano<br />Pequeñas fincas<br />Matadero municipal
+        </li>
+      </ul>
+      <Image src={infrastructures01} alt="" class="mt-12" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Cerdos sacrificados">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4">
+          <strong>Cada año en Cataluña</strong> se sacrifican.
+        </li>
+      </ul>
+      <div>
+        <p class="text-8xl font-bold mb-4">23 millones</p>
+        <Image src={slaughter00} alt="" class="mb-4" />
+      </div>
+      <div>
+        <p>
+          <strong>14 millones</strong><br />en los mataderos de Vall Companys,
+          Grupo Batallé-Juià y Costa Brava.<sup>6</sup>
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4"><strong>En el Matadero de l'Armentera</strong></li>
+      </ul>
+      <div class="flex items-start gap-4">
+        <Image src={slaughter01} alt="" class="" />
+        <div>
+          <p class="text-8xl font-bold mb-4 text-green-500">3.500</p>
+          <p>
+            animales sacrificados cada año en una relación directa con los
+            ganaderos locales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Bienestar animal">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Miles de cerdos en un espacio reducido e interior</strong><br
+          />Los animales son transportados <strong>cientos de kilómetros</strong
+          > hasta el matadero.<sup>7</sup>
+        </li>
+      </ul>
+      <Image src={animalCare00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Decenas o pocos cientos de cerdos en un espacio amplio con
+            posibilidad de salir al exterior</strong
+          >.<br />Los animales son transportados <strong
+            >pocos kilómetros</strong
+          > hasta el matadero.
+        </li>
+      </ul>
+      <Image src={animalCare01} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Agua">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Genera estrés hídrico</strong><sup>8</sup><br />El uso de agua
+          es de…
+        </li>
+      </ul>
+      <div class="flex justify-center gap-8 mt-8">
+        <div class="px-4 md:px-8">
+          <Image src={water00} alt="" />
+          <p class="mt-4 uppercase text-center text-xs">
+            Industria catalana del cerdo
+          </p>
+        </div>
+        <div class="px-4 md:px-8">
+          <Image src={water01} alt="" />
+          <p class="mt-4 uppercase text-center text-xs">
+            todos las hogares de Cataluña
+          </p>
+        </div>
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li><strong>Sufre estrés hídrico</strong>.</li>
+      </ul>
+      <Image src={water02} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Purines">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Los purines de forma líquida contaminan la tierra, el aire y el
+            agua</strong
+          >
+        </li>
+      </ul>
+      <div class="flex justify-start gap-4 mt-8">
+        <Image src={slurry00} alt="" />
+        <p>
+          <strong>40%</strong><br />del territorio catalán <strong
+            >está contaminado</strong
+          > por un exceso de nitratos<sup>10</sup>
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >El estiércol en lecho de paja reproduce la fertilidad del suelo</strong
+          >.
+        </li>
+      </ul>
+      <Image src={slurry01} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Emisiones">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li><strong>Emisiones de efecto invernadero</strong>.</li>
+      </ul>
+      <div class="flex justify-start gap-4 mt-8">
+        <Image src={emissions00} alt="" />
+        <p>
+          <strong>21%</strong><br />La <strong
+            >industria porcina catalana</strong
+          > es responsable<sup>9</sup>
+        </p>
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Genera menos carbono y captura parte del que genera</strong>.
+        </li>
+      </ul>
+      <Image src={emissions01} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="A quién beneficia">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Alimenta los beneficios económicos de los grandes actores</strong
+          ><br />Datos de los beneficios del 2023.
+        </li>
+      </ul>
+      <div class="mt-8">
+        <div class="flex justify-start items-center gap-4">
+          <p class="font-bold text-sm basis-auto md:basis-[120px]">
+            Vall Companys
+          </p>
+          <span class="h-5 w-20 md:w-40 bg-red-600">{''}</span>
+          <p class="font-bold text-sm">110M €</p>
+        </div>
+        <div class="flex justify-start items-center gap-4 mt-2">
+          <p class="font-bold text-sm basis-auto md:basis-[120px]">BonÀrea</p>
+          <span class="h-5 w-15 md:w-30 bg-red-600">{''}</span>
+          <p class="font-bold text-sm">81M €</p>
+        </div>
+      </div>
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li class="mb-4">
+          <strong
+            >Sostiene una diversidad de pequeños actores arraigados al
+            territorio</strong
+          ><br />En Llavora, los ganaderos cobran 445€ más por cerdo que si
+          trabajasen con el mercado mayorista.
+        </li>
+      </ul>
+      <div class="flex items-start gap-4">
+        <Image src={slaughter01} alt="" class="" />
+        <div>
+          <p class="text-8xl font-bold mb-4 text-green-500">+ 445€</p>
+        </div>
+      </div>
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Democracia">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Las decisiones están en manos de un grupo reducido de actores y
+            personas</strong
+          >.
+        </li>
+      </ul>
+      <Image src={democracy00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Diversidad de actores participan en las decisiones</strong
+          >.<br />En el Matadero de l'Armentera, de gestión cooperativa, la toma
+          de decisiones es asamblearia.
+        </li>
+      </ul>
+      <Image src={democracy01} alt="" class="mt-6" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Ocupación">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong
+            >Puestos de trabajo precarios y desvinculados del territorio</strong
+          >.<br />La integración vertical y la concentración industrial tienden
+          a <strong>destruir más puestos de trabajo de los que crean</strong> y generan
+          <strong>despoblación rural</strong><sup>4, 5</sup>.
+        </li>
+      </ul>
+      <Image src={labour00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Ocupación de calidad vinculada al territorio</strong>.<br />En
+          Llavora se crean <strong>10 veces más puestos de trabajo</strong> por cerdo
+          que en una finca intensiva de las mismas dimensiones.
+        </li>
+      </ul>
+      <Image src={labour01} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Consumo final">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Carne de baja calidad</strong>.<br />Se exporta
+          mayoritariamente a <strong>China</strong>, <strong>Francia</strong> y <strong
+            >Japón</strong
+          >.<sup>11</sup>.
+        </li>
+      </ul>
+      <Image src={finalConsumer00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Carne de calidad</strong>.<br />Abastece a <strong
+            >actores arraigados al territorio</strong
+          >: carniceros artesanales, pequeño comercio y consumidores locales.
+        </li>
+      </ul>
+      <Image src={finalConsumer01} alt="" class="mt-8" />
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo title="Escala">
+    <div slot="content1" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>Del inicio al final de la cadena</strong><sup>1</sup>.
+        </li>
+      </ul>
+      <p class="text-3xl font-bold mt-4">+20.000 km.</p>
+      <Image src={scale00} alt="" class="mt-8" />
+    </div>
+    <div slot="content2" class="lg:text-xl">
+      <ul class="list-disc">
+        <li>
+          <strong>El Matadero de l'Armentera</strong>.<br /><strong
+            >Producción</strong
+          > en un radio de 5 km y <strong>distribución</strong> en un máximo de 150
+          km.
+        </li>
+      </ul>
+      <div class="mt-4">
+        <Icon name="arrow-right" class="text-xs text-green-500" />
+        <p class="text-3xl font-bold">155 km.</p>
+      </div>
+    </div>
+  </ScreenSplitTwo>
+
+  <ScreenSplitTwo>
+    <div slot="content1" class="text-xs lg:text-sm">
+      <ul>
+        <li>
+          <sup>1</sup> GRAIN (2001). La ruta de la soja: el papel del puerto de Barcelona.
+        </li>
+        <li><sup>2</sup> Idescat.</li>
+        <li><sup>3</sup> Mercabarna (2024). Mercabarna en xifres.</li>
+        <li>
+          <sup>4</sup> Forner, G. (2022). Explotación animal, explotación laboral,
+          El Salto Diario.
+        </li>
+        <li>
+          <sup>5</sup> Ecologistas en acción (2001). Ganadería industrial y despoblación.
+        </li>
+        <li>
+          <sup>6</sup> García, F. (2022). Això no toca. Les emissions ocultes del
+          sector porcí català. Barcelona: Justícia Alimentària
+        </li>
+        <li><sup>7</sup> Greenpeace (2024). Macrogranjas.</li>
+        <li>
+          <sup>8</sup> Justícia Alimentària (2024). El porc d’aigua català. Denominació
+          d’origen protegida. [Manuscrit inèdit]
+        </li>
+        <li>
+          <sup>9</sup> García, F. (2022). Això no toca. Les emissions ocultes del
+          sector porcí català. Barcelona: Justícia Alimentària.
+        </li>
+        <li>
+          <sup>10</sup> Agència Catalana de l’Aigua (2022). Avaluació de la problemàtica
+          originada per l’excés de nitrats d’origen agrari en les masses d’aigua subterrànies
+          a Catalunya. Generalitat de Catalunya.
+        </li>
+        <li>
+          <sup>11</sup> Prodeca (2024). El sector de la carne y los embutidos.
+        </li>
+      </ul>
+    </div>
+    <div slot="content2"></div>
+  </ScreenSplitTwo>
+</Layout>
+
+<style>
+  .m-rotate-90-deg {
+    transform: rotate(-90deg) translate(-50%, 0);
+  }
+</style>
