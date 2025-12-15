@@ -1,6 +1,6 @@
 export const stringToTranslate = {
   ca: {
-    title: 'Informe Escorxadors Municipals',
+    title: 'Infraestructures per a l’alimentació sostenible',
     promoted: 'Promou',
     funded: 'Finança',
     accessMenu: 'Accés Menú',
@@ -12,7 +12,7 @@ export const stringToTranslate = {
     downloadPDF: "Descàrrega l'informe en PDF",
   },
   es: {
-    title: 'Informe mataderos municipales',
+    title: 'Infraestructuras para la alimentación sostenible',
     promoted: 'Promovido',
     funded: 'Financiado',
     accessMenu: 'Acceso Menú',
