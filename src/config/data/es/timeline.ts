@@ -7,7 +7,7 @@ import publicComunitari from '@assets/images/public-comunitari.png';
 const dataTimelineEs = [
   {
     image: origenComunal,
-    altImage: '',
+    altImage: 'vacas en el prado',
     title: 'Origen comunal',
     time: 'Edad Media (S. XIII - XVIII)',
     description1: 'Modelo económico',
@@ -21,7 +21,7 @@ const dataTimelineEs = [
   },
   {
     image: rupturaNeoliberal,
-    altImage: '',
+    altImage: 'cartel de uso privado',
     title: 'La ruptura liberal con la desamortización',
     time: '1855 - 1890',
     description1: 'Modelo económico',
@@ -36,7 +36,7 @@ const dataTimelineEs = [
   },
   {
     image: serveiPublicMunicipal,
-    altImage: '',
+    altImage: 'fachada matadero municipal',
     title: 'Servicio público municipal',
     time: '1890',
     description1: 'Modelo económico',
@@ -50,7 +50,7 @@ const dataTimelineEs = [
   },
   {
     image: privatitzacioDeclive,
-    altImage: '',
+    altImage: 'fábrica',
     title: 'Privatización y declive',
     time: '1996 - 2022',
     description1: 'Modelo económico',
@@ -64,7 +64,7 @@ const dataTimelineEs = [
   },
   {
     image: publicComunitari,
-    altImage: '',
+    altImage: "fachada matadero de l'armentera",
     title: 'Hacia un modelo público-comunitario',
     time: '2022 - Futuro',
     description1: 'Modelo económico',

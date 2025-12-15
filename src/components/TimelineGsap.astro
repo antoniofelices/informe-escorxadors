@@ -63,7 +63,6 @@ const periods = Astro.props.periods;
   import { gsap, ScrollTrigger } from '@lib/gsap';
 
   function initTimeline() {
-    // Linea del timeline
     gsap.to('.timeline-line', {
       scaleY: 1,
       duration: 1.5,
@@ -71,7 +70,6 @@ const periods = Astro.props.periods;
       delay: 0.5,
     });
 
-    // Animar cada item del timeline
     const timelineItems = document.querySelectorAll('.timeline-item');
 
     timelineItems.forEach((item, index) => {
@@ -79,7 +77,6 @@ const periods = Astro.props.periods;
       const content = item.querySelector('.timeline-content');
       const example = item.querySelector('.example');
 
-      // GSAP Timeline para cada item
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
@@ -89,7 +86,6 @@ const periods = Astro.props.periods;
         },
       });
 
-      // Secuencia de animaciones
       tl.from(icon, {
         scale: 0,
         duration: 0.5,
@@ -115,7 +111,6 @@ const periods = Astro.props.periods;
           '-=0.2'
         );
 
-      // Hover effect con GSAP
       item.addEventListener('mouseenter', () => {
         gsap.to(content, {
           scale: 1.02,
@@ -142,17 +137,6 @@ const periods = Astro.props.periods;
         });
       });
     });
-
-    // Parallax suave en scroll
-    // gsap.to('.timeline-line', {
-    //     scrollTrigger: {
-    //         trigger: '.timeline',
-    //         start: 'top top',
-    //         end: 'bottom bottom',
-    //         scrub: 1,
-    //     },
-    //     backgroundPosition: '0 100%',
-    // })
   }
 
   document.addEventListener('astro:page-load', initTimeline);
